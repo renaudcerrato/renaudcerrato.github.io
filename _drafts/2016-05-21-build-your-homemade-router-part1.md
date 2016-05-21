@@ -34,9 +34,7 @@ I choosed a 20cm FFC cable (included) to connect both sides of the adapter and f
 
 ![mPCIe port](/static/img/mpci2.jpg)
 
-Since that mini-ITX case comes with 3 (perfectly sized) pre-cut holes for your antenna needs, I won't go into details about them. 
-
-Here's the final result:
+Since that mini-ITX case comes with 3 (perfectly sized) pre-cut holes for your antenna needs, I won't go into details about them. Here's the final result:
 
 ![](/static/img/case1.jpg)
 
