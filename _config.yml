@@ -9,7 +9,7 @@ permalink:        pretty
 # Setup
 title:            Renaud Cerrato
 tagline:          ''
-description:      '<font face="monospace"># cat /dev/zero > /dev/brain</font>'
+description:      '<font face="monospace" size="3"># cat /dev/zero > /dev/brain</font>'
 url:              http://renaudcerrato.github.io
 baseurl:          /
 
