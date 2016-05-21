@@ -14,6 +14,16 @@ Since I needed to upgrade my Buffalo WHR-300HP2 AP/router to something able to g
 - [PicoPSU-90](http://www.amazon.com/PicoPSU-90-Adapter-Power-Kit-Cyncronix/dp/B00316T5S8)
 
 
+## Assembly
+
+The motherboard, RAM and the Pico-PSU installation went smoothly: the case has (relatively) a lot of room, and even have pre-cut holes for the AC/DC adapter:
+
+
+
+
+
+
+
 
 
 
