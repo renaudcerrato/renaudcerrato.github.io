@@ -18,17 +18,30 @@ Since I needed to upgrade my Buffalo WHR-300HP2 AP/router to something able to g
 
 ## Assembly
 
-The motherboard, RAM and the Pico-PSU installation went smoothly: the case has (relatively) a lot of room, and even have pre-cut holes for the AC/DC adapter:
+The motherboard, RAM and the Pico-PSU installation went smoothly: the case has (relatively) a lot of room, and even have (perfectly sized) pre-cut holes for the AC/DC adapter:
 
 
 ![assembly](/static/img/assembly-small.jpg)
 
 
-The trickiest part was the [mini-PCIe Wi-Fi card]((http://www.amazon.com/AIRETOS-AEX-QCA9880-NX-802-11ac-Extended-Temperature/dp/B00OJPJVV6)): the motherboard doesn't have enough room to support full-size cards, only half-sized. Here come the [mPCIe Extender](http://www.amazon.com/KZ-B22-mini-Express-MiniCard-Extender/dp/B008P1I28I) to the rescue:
+The trickiest part was the [mini-PCIe Wi-Fi card]((http://www.amazon.com/AIRETOS-AEX-QCA9880-NX-802-11ac-Extended-Temperature/dp/B00OJPJVV6): the motherboard doesn't have enough room to support full-size cards, only half-sized. Here come the [mPCIe Extender](http://www.amazon.com/KZ-B22-mini-Express-MiniCard-Extender/dp/B008P1I28I) to the rescue:
+
+![mPCIe extender](/static/img/airetos-small.jpg)
+![mPCIe port](/static/img/mpci.jpg)
+
+Then, fix the mini-PCIe card to the chassis using some double sided tape:
+
+![mPCIe port](/static/img/mpci2.jpg)
+
+That mini-ITX case comes with 3 (perfectly sized) pre-cut holes for your antenna needs ; here's the final result:
+
+![](/static/img/case1.jpg)
+
+![](/static/img/case2.jpg)
 
 
-![](/static/img/airetos-small.jpg)
-![](/static/img/mpci.jpg)
+
+
 
 
 
