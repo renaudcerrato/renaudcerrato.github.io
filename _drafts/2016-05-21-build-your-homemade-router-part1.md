@@ -18,7 +18,7 @@ Since I needed to upgrade my Buffalo WHR-300HP2 AP/router to something able to g
 
 ## Assembly
 
-The motherboard, RAM and the Pico-PSU installation went smoothly: the case has (relatively) a lot of room, and even have (perfectly sized) pre-cut holes for the AC/DC adapter:
+The motherboard, RAM and the Pico-PSU installation went smoothly: the case is spacious, and even have (perfectly sized) pre-cut holes for the AC/DC adapter:
 
 
 ![assembly](/static/img/assembly-small.jpg)
@@ -29,22 +29,14 @@ The trickiest part was the [mini-PCIe Wi-Fi card]((http://www.amazon.com/AIRETOS
 ![mPCIe extender](/static/img/airetos-small.jpg)
 ![mPCIe port](/static/img/mpci.jpg)
 
-Then, fix the mini-PCIe card to the chassis using some double sided tape:
+I choosed a 20cm FFC cable (included) to connect both sides of the adapter and fixed the mini-PCIe side to the chassis using some double sided tape:
 
 ![mPCIe port](/static/img/mpci2.jpg)
 
-That mini-ITX case comes with 3 (perfectly sized) pre-cut holes for your antenna needs ; here's the final result:
+Since that mini-ITX case comes with 3 (perfectly sized) pre-cut holes for your antenna needs, I won't go into details about them. 
+
+Here's the final result:
 
 ![](/static/img/case1.jpg)
 
 ![](/static/img/case2.jpg)
-
-
-
-
-
-
-
-
-
-
