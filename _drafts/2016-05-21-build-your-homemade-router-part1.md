@@ -1,7 +1,7 @@
 ---
 published: false
 ---
-I've spent the last decade flashing my home routers to DD-WRT but was never really satisfied because of the cheap (and poorly supported) hardware, unstable builds, and/or unfixed bugs. Not even talking of [the controversy](http://www.wi-fiplanet.com/columns/article.php/3816236/The-DD-WRT-Controversy.htm) about it.  
+I've spent the last decade flashing my home routers to DD-WRT but was never totally satisfied mainly because of the cheap (and poorly supported) hardware, unstable builds, and/or unfixed bugs. Not even talking of [the controversy](http://www.wi-fiplanet.com/columns/article.php/3816236/The-DD-WRT-Controversy.htm) about it.  
 
 Since I needed to upgrade my Buffalo WHR-300HP2 AP/router to something able to get the most of my 200Mbps cable connection, I recently decided to build my own.
 
@@ -27,6 +27,7 @@ The motherboard, RAM and the Pico-PSU installation went smoothly: the case is sp
 The trickiest part was the [mini-PCIe Wi-Fi card]((http://www.amazon.com/AIRETOS-AEX-QCA9880-NX-802-11ac-Extended-Temperature/dp/B00OJPJVV6): the motherboard doesn't have enough room to support full-size cards, only half-sized. Here come the [mPCIe Extender](http://www.amazon.com/KZ-B22-mini-Express-MiniCard-Extender/dp/B008P1I28I) to the rescue:
 
 ![mPCIe extender](/static/img/airetos-small.jpg)
+
 ![mPCIe port](/static/img/mpci.jpg)
 
 I choosed a 20cm FFC cable (included) to connect both sides of the adapter and fixed the mini-PCIe side to the chassis using some double sided tape:
