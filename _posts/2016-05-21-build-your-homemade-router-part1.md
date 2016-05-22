@@ -41,4 +41,9 @@ Since that mini-ITX case comes with 3 (again, perfectly sized) pre-cut holes for
 
 ![](/static/img/case2.jpg)
 
-## 
+## Installation
+
+I choosed [Lubuntu 16.04LTS](http://lubuntu.net): an Ubuntu based distro with a lightweight desktop environment (if ever needed). I had to burn the ISO to an USB drive - the installation went smoothly.
+
+
+
