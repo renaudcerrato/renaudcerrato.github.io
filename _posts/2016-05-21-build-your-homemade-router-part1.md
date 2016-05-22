@@ -4,7 +4,7 @@ title: Build your homemade router (part 1)
 ---
 I've spent the last decade flashing my home routers to DD-WRT but was never totally satisfied about it because of the cheap (and poorly supported) hardware, unstable builds, and/or unfixed bugs. Not even talking of [the controversy](http://www.wi-fiplanet.com/columns/article.php/3816236/The-DD-WRT-Controversy.htm) about it.  
 
-Since I needed to upgrade my Buffalo WHR-300HP2 AP/router to something able to get the most of my 200Mbps cable connection, I recently decided to build my own.
+Since I needed to upgrade my [Buffalo WHR-300HP2](http://www.buffalotech.com/products/wireless/single-band/airstation-highpower-n300-wireless-router-2) to something able to get the most of my 200Mbps cable connection, I recently decided to build my own Ubuntu 16.04LTS based router.
 
 ## Bill of Material
 
@@ -19,13 +19,13 @@ Since I needed to upgrade my Buffalo WHR-300HP2 AP/router to something able to g
 
 ## Assembly
 
-The motherboard, RAM and the Pico-PSU installation went smoothly: the case is spacious, and even have (perfectly sized) pre-cut holes for the AC/DC adapter:
+The motherboard, RAM and the Pico-PSU installation went smoothly: the case is spacious, and even have (perfectly sized) pre-cut holes for the AC/DC plug:
 
 
 ![assembly](/static/img/assembly-small.jpg)
 
 
-The trickiest part was the [mini-PCIe Wi-Fi card]((http://www.amazon.com/AIRETOS-AEX-QCA9880-NX-802-11ac-Extended-Temperature/dp/B00OJPJVV6): the motherboard doesn't have enough room to support full-size cards, only half-sized. Here come the [mPCIe Extender](http://www.amazon.com/KZ-B22-mini-Express-MiniCard-Extender/dp/B008P1I28I) to the rescue:
+The trickiest part was the [mini-PCIe Wi-Fi card](http://www.amazon.com/AIRETOS-AEX-QCA9880-NX-802-11ac-Extended-Temperature/dp/B00OJPJVV6): the motherboard doesn't have enough room to support full-size cards, only half-sized. Here come the [mPCIe Extender](http://www.amazon.com/KZ-B22-mini-Express-MiniCard-Extender/dp/B008P1I28I) to the rescue:
 
 ![mPCIe extender](/static/img/airetos-small.jpg)
 
@@ -35,8 +35,10 @@ I choosed a 20cm FFC cable (included) to connect both sides of the adapter and f
 
 ![mPCIe port](/static/img/mpci2.jpg)
 
-Since that mini-ITX case comes with 3 (perfectly sized) pre-cut holes for your antenna needs, I won't go into details about them. Here's the final result:
+Since that mini-ITX case comes with 3 (again, perfectly sized) pre-cut holes for your antenna needs, I won't go into details about them. Here's the final result:
 
 ![](/static/img/case1.jpg)
 
 ![](/static/img/case2.jpg)
+
+## 
