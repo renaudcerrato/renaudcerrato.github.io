@@ -1,6 +1,7 @@
 ---
 published: true
 title: Build your homemade router (part 1)
+layout: post
 ---
 I've spent the last decade flashing my home routers to DD-WRT but was never totally satisfied about it because of the cheap (and poorly supported) hardware, unstable builds, and/or unfixed bugs. Not even talking of [the controversy](http://www.wi-fiplanet.com/columns/article.php/3816236/The-DD-WRT-Controversy.htm) about it.  
 
