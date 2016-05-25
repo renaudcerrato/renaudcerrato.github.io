@@ -49,7 +49,7 @@ We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsm
 $ sudo apt-get install dnsmasq bridge-utils
 ```
 
-We'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a _preliminary_ configuration including our minimal `dnsmasq` setup:
+We'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram: you'll find below a _preliminary_ configuration including a minimal `dnsmasq` setup:
 
 ```shell
 $ cat /etc/network/interfaces
