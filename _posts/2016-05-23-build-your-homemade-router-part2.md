@@ -125,12 +125,12 @@ router lan2wan inface br0 outface enp1s0
 
 You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting a laptop to the available NIC port: **you should now be able to browse the internet.**
 
-As a last point, **do not forget** to edit `/etc/default/firehol` to enable autostart on boot:
+As a last point, **do not forget** to edit `/etc/default/firehol` to enable autostart:
 
 ```shell
 $ cat /etc/default/firehold
 ...
-# To enable firehol at startup set START_FIREHOL=YES (init script variable)
+# To enable firehol at startup set START_FIREHOL=YES
 START_FIREHOL=YES
 ```
 
