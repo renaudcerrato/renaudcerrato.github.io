@@ -106,7 +106,7 @@ Let's install it first:
 $ sudo apt-get install firehol
 ```
 
-Thanks to `firehol`, our routing configuration is as simple as:
+Thanks to `firehol`, our routing configuration could be as simple as:
 
 ```shell
 $ cat /etc/firehol/firehol.conf 
@@ -127,9 +127,9 @@ router lan2wan inface br0 outface enp1s0
         route all accept
 ```
 
-You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting your laptop to your available NIC port: **you should now be able to connect to the internet now.**
+You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting your laptop to your available NIC port: **you should now be able to connect to the internet.**
 
-I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory, but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/).
+If you're really curious about what `firehol` did to your iptables, just type `sudo firehol status`.
 
 **Do not forget** to edit `/etc/default/firehol` to enable autostart on boot:
 
@@ -140,9 +140,7 @@ $ cat /etc/default/firehold
 START_FIREHOL=YES
 ```
 
-
-
-
+I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup.
 
 
 ### hostapd
