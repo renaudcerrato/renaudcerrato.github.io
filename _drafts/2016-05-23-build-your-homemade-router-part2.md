@@ -69,7 +69,8 @@ iface br0 inet static
     netmask 255.255.255.0
     broadcast 192.168.1.255 
     bridge_ports enp2s0 wlp5s0
-    post-up /usr/sbin/dnsmasq -x /var/run/dnsmasq-br0.pid \
+    post-up /usr/sbin/dnsmasq \
+    			--pid-file=/var/run/dnsmasq-br0.pid \
                 --conf-file=/dev/null \
     			--interface=br0 --except-interface=lo \
                 --dhcp-range=192.168.1.10,192.168.1.150,24h
