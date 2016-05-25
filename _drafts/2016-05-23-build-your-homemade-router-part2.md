@@ -98,9 +98,7 @@ The last command above will ensure that the configuration will survive to the ne
 
 ### FireHol
 
-If, like me, you read tons of documentations/tutorials/articles about `iptables` and still can't understand how an human brain could ever learn to write [iptables](https://help.ubuntu.com/community/IptablesHowTo) statements, you're right! Being required to write iptables statements today is like being required to write programs in assembly. Hopefully, the guys at [FireHol](https://firehol.org/) put a lot of efforts adding the required level of abstration to `iptables`.
-
-Let's install it first:
+If, like me, you read tons of documentations/tutorials/articles about `iptables` and still can't understand how an human brain could ever learn to write [iptables](https://help.ubuntu.com/community/IptablesHowTo) statements, you're right! Being required to write iptables statements today is like being required to write programs in assembly. Hopefully, the guys at [FireHol](https://firehol.org/) put a lot of efforts adding the required level of abstration to them:
 
 ```shell
 $ sudo apt-get install firehol
