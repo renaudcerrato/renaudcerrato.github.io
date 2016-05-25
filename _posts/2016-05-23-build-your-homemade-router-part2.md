@@ -81,7 +81,7 @@ As you may see, `dnsmasq` will be started as soon as the bridge is up thanks to 
 
 You can now restart your networking (`sudo service networking restart`) or simply reboot the router to check if your network configuration is properly setup. 
 
-However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (more on this later), **nor able to connect to internet**.
+However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (more on this later), **nor able to connect to internet** (see below).
 
 ## Routing
 
