@@ -18,7 +18,7 @@ wlp5s0    Link encap:Ethernet  HWaddr xx:xx:xx:xx:xx:xx
           ...         
 ```
 
-The motherboard have 2 built-in LAN, named `enp1s0` and `enp2s0`. The mini-PCIe WiFi card is showing up as `wlp5s0`, and support AP mode as expected:
+The motherboard have 2 built-in NIC named `enp1s0` and `enp2s0`. The mini-PCIe WiFi card is showing as `wlp5s0`, and support AP mode as expected:
 
 ```shell
 $ iw list
