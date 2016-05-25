@@ -134,7 +134,7 @@ $ cat /etc/default/firehold
 START_FIREHOL=YES
 ```
 
-> I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
+> I won't go into details about the whole `firehol` syntax, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
 
 
 ## Access Point
