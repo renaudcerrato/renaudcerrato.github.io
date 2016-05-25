@@ -70,10 +70,10 @@ iface br0 inet static
     broadcast 192.168.1.255 
     bridge_ports enp2s0 wlp5s0
     post-up /usr/sbin/dnsmasq \
-    			--pid-file=/var/run/dnsmasq-br0.pid \
-                --conf-file=/dev/null \
-    			--interface=br0 --except-interface=lo \
-                --dhcp-range=192.168.1.10,192.168.1.150,24h
+              --pid-file=/var/run/dnsmasq-br0.pid \
+              --conf-file=/dev/null \
+              --interface=br0 --except-interface=lo \
+              --dhcp-range=192.168.1.10,192.168.1.150,24h
     pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
 ```
 
