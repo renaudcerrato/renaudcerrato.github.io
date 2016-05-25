@@ -94,7 +94,7 @@ $ sudo sysctl -w net.ipv4.ip_forward=1
 $ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 ```
 
-The last command above will ensure that the configuration will survive to the next reboot.
+> The last command above will ensure that the configuration will survive to the next reboot.
 
 ### FireHol
 
@@ -136,7 +136,7 @@ $ cat /etc/default/firehold
 START_FIREHOL=YES
 ```
 
-I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
+> I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
 
 
 ## Access Point
