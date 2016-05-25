@@ -43,7 +43,7 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 ## Network
 
-Let's first install the requirements! We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server
+Let's first install the requirements! We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server:
 
 ```shell
 $ sudo apt-get install dnsmasq bridge-utils
@@ -139,7 +139,7 @@ START_FIREHOL=YES
 I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to your iptables, just drop `sudo firehol status` on the command line.
 
 
-### Access Point
+## Access Point
 TODO
 
 
