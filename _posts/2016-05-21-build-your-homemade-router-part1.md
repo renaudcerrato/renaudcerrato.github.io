@@ -47,4 +47,4 @@ Since that mini-ITX case comes with 3 (again, perfectly sized) pre-cut holes for
 I choosed [Lubuntu 16.04LTS](http://lubuntu.net): an Ubuntu based distro with a lightweight desktop environment (if ever needed).
 
 
-The [next part](/2016-05-21-build-your-homemade-router-part2) will configure your freshly installed router.
+The [next part](/2016-05-23-build-your-homemade-router-part2) will configure your freshly installed router.
