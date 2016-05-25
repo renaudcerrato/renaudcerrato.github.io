@@ -77,6 +77,10 @@ iface br0 inet static
     pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
 ```
 
+You can now restart your networking (`sudo service networking restart`) or simply reboot your router to check if your network configuration is properly setup. 
+
+However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (yet), **nor able to reach internet**.
+
 
 ### hostapd
 TODO
