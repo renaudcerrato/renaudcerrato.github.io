@@ -77,9 +77,9 @@ iface br0 inet static
     pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
 ```
 
-As you may see, `dnsmasq` will be started as soon as your bridge is up thanks to the `post-up` section. Its configuration is done through command line arguments only (`--conf-file=/dev/null`) and the process will be shutdown when the interface go down. 
+As you may see, `dnsmasq` will be started as soon as the bridge is up thanks to the `post-up` section. Its configuration is done through command line arguments only (`--conf-file=/dev/null`) and the process will be shutdown when the interface go down. 
 
-You can now restart your networking (`sudo service networking restart`) or simply reboot your router to check if your network configuration is properly setup. 
+You can now restart your networking (`sudo service networking restart`) or simply reboot the router to check if your network configuration is properly setup. 
 
 However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (more on this later), **nor able to connect to internet**.
 
@@ -125,7 +125,7 @@ router lan2wan inface br0 outface enp1s0
         route all accept
 ```
 
-You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting your laptop to the available NIC port: **you should now be able to browse the internet.**
+You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting a laptop to the available NIC port: **you should now be able to browse the internet.**
 
 As a last point, **do not forget** to edit `/etc/default/firehol` to enable autostart on boot:
 
@@ -136,7 +136,7 @@ $ cat /etc/default/firehold
 START_FIREHOL=YES
 ```
 
-I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to your iptables, just drop `sudo firehol status` on the command line.
+I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
 
 
 ## Access Point
