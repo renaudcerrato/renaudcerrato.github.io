@@ -140,16 +140,17 @@ I won't go into details about the `firehol` syntax above, the configuration shou
 
 
 ## Access Point
-TODO
 
+With no surprises, we'll use [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
 
-Conflicting NetworkManager:
-http://askubuntu.com/questions/472794/hostapd-error-nl80211-could-not-configure-driver-mode
+```shell
+$ sudo apt-get install hostapd
+```
 
-Solution:
+Before going further, I'd recommend to uninstall `NetworkManager`: mostly because we don't need it anymore, and partly because [of a known bug](https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1289047):
 
 ```
-sudo apt-get remove network-manager
+$ sudo apt-get remove network-manager
 ```
 
 
