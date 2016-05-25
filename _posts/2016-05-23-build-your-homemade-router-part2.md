@@ -96,7 +96,7 @@ $ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 
 > The last command above will ensure that the configuration will survive to the next reboot.
 
-Like me, if you read tons of documentations/tutorials/articles about `iptables` and still can't understand how an human brain could ever learn to write [iptables](https://help.ubuntu.com/community/IptablesHowTo) statements, you're right! Being required to write iptables statements today is like being required to write programs in assembly. Hopefully, the guys at [FireHol](https://firehol.org/) put a lot of efforts adding the required level of abstration to them:
+Like me, if you read tons of documentations/tutorials/articles about `iptables` and still can't understand how an human brain could ever learn to write [iptables](https://help.ubuntu.com/community/IptablesHowTo) statements, you're right! Being required to write iptables statements today is like being required to write programs in assembly. Hopefully, the guys at [FireHol](https://firehol.org/) put a lot of efforts adding the required level of abstration to that:
 
 ```shell
 $ sudo apt-get install firehol
