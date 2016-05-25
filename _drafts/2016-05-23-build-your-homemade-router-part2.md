@@ -181,11 +181,21 @@ rsn_pairwise=CCMP
 wpa_passphrase=YouCantGuess
 ```
 
-You can easily test it by running the following command:
+> You'll find the documentation of every available options into the [examples](http://w1.fi/gitweb/gitweb.cgi?p=hostap.git;a=blob_plain;f=hostapd/hostapd.conf) directory at `/usr/share/doc/hostapd/examples/`. 
+
+You can easily test the configuration above by running the following command:
 
 ```shell
+$ sudo hostapd /etc/hostapd/hostapd-test.conf
 ```
 
+If everything goes well, **you should now be able to connect wirelessly**!
+
+However, **do not forget** to edit our `/etc/network/interfaces` accordingly:
+
+```shell
+
+```
 
 
 ath10k patches for 5Ghz:
