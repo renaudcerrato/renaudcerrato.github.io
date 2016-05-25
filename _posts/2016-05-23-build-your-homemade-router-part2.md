@@ -6,7 +6,7 @@ layout: post
 
 This post is the second part of the series "Build your homemade router". The [first part](https://renaudcerrato.github.io/2016/05/21/build-your-homemade-router-part1/) covered the material installation.
 
-That second part will cover the configuration of your freshly installed machine and, before going further, we'll need to draw what we want to achieve. Let's see what are the name of the interfaces:
+That second part will cover the configuration of your freshly installed machine and, before going further, we'll need to draw what we want to achieve. Let's see what are the name of the every interface:
 
 ```shell
 $ ifconfig
@@ -134,7 +134,7 @@ $ cat /etc/default/firehold
 START_FIREHOL=YES
 ```
 
-> I won't go into details about the whole `firehol` syntax, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
+> I won't go into details about the whole `firehol` syntax, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Moreover, if you're really curious about what `firehol` did to our iptables, just drop `sudo firehol status` on the command line.
 
 
 ## Access Point
