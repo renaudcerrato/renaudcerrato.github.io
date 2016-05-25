@@ -72,7 +72,7 @@ iface br0 inet static
     post-up /usr/sbin/dnsmasq -x /var/run/dnsmasq-br0.pid \
                 --conf-file=/dev/null \
     			--interface=br0 --except-interface=lo \
-                --dhcp-range=192.168.1.50,192.168.1.150,255.255.255.0,24h
+                --dhcp-range=192.168.1.10,192.168.1.150,24h
     post-down cat /var/run/dnsmasq-br0.pid | kill
 ```
 
