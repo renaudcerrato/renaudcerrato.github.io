@@ -181,7 +181,7 @@ rsn_pairwise=CCMP
 wpa_passphrase=YouCantGuess
 ```
 
-> You'll find the documentation of every available options into the [examples](http://w1.fi/gitweb/gitweb.cgi?p=hostap.git;a=blob_plain;f=hostapd/hostapd.conf) directory at `/usr/share/doc/hostapd/examples/`. 
+> You'll find the [documentation](http://w1.fi/gitweb/gitweb.cgi?p=hostap.git;a=blob_plain;f=hostapd/hostapd.conf) of every available options into the `/usr/share/doc/hostapd/examples/`] directory. 
 
 You can easily test the configuration above by running the following command:
 
