@@ -49,7 +49,7 @@ Let's first install the requirements: we'll make use of [dnsmasq](http://manpage
 $ sudo apt-get install dnsmasq hostapd
 ```
 
-Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram:
+Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's our _preliminary_ configuration:
 
 ```shell
 $ cat /etc/network/interfaces
