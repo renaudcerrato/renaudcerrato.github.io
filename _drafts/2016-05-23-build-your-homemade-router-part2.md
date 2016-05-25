@@ -43,10 +43,40 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 ## Configuration
 
+Let's first install our requirements: we'll make use of [dnsmasq](https://help.ubuntu.com/community/Dnsmasq) as our DHCP/DNS server, and [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
 
 ```
-sudo apt-get install hostapd
+$ sudo apt-get install dnsmasq hostapd
 ```
+
+Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a first draft:
+
+```shell
+$ cat /etc/network/interfaces
+# Loopback
+auto lo
+iface lo inet loopback
+
+# WAN interface
+auto enp1s0
+iface enp1s0 inet dhcp
+
+# Bridge (LAN)
+auto br0 
+iface br0 inet static
+    address 192.168.1.1
+    network 192.168.1.0
+    netmask 255.255.255.0
+    broadcast 192.168.1.255 
+    bridge_ports enp2s0 wlp5s0
+```
+
+### dnsmasq
+TODO
+
+### hostapd
+TODO
+
 
 Conflicting NetworkManager:
 http://askubuntu.com/questions/472794/hostapd-error-nl80211-could-not-configure-driver-mode
