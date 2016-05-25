@@ -34,11 +34,14 @@ Supported interface modes:
 
 ## Diagram
 
-From the informations above, we can finally draw a diagram:
+From the informations above, we can finally draw our diagram: the first NIC will serve as our WAN port, while the second one will be bridged to our wireless network:
 
 
 ![](/static/img/network-diagram.jpg)
 
+
+
+## Configuration
 
 
 ```
