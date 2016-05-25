@@ -208,7 +208,7 @@ iface br0 inet static
     broadcast 192.168.1.255 
     bridge_ports enp2s0 wlp5s0
     pre-up /usr/sbin/hostapd \
-              -P /var/run/hostapd.pid \
+              -P /var/run/hostapd-br0.pid \
               -B /etc/hostapd/hostapd-test.conf
     post-up /usr/sbin/dnsmasq \
               --pid-file=/var/run/dnsmasq-br0.pid \
@@ -216,7 +216,7 @@ iface br0 inet static
               --interface=br0 --except-interface=lo \
               --dhcp-range=192.168.1.10,192.168.1.150,24h               
     pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
-    pre-down cat /var/run/hostapd.pid | xargs kill
+    pre-down cat /var/run/hostapd-br0.pid | xargs kill
 
 ```
 
