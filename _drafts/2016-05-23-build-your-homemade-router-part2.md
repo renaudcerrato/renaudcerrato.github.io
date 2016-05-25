@@ -85,9 +85,9 @@ However, please note that while you should be able to get DHCP leases from `enp2
 
 ## Routing
 
-At this point, we need to tell our machine to route packets between our LAN interface (`enp2s0`) and our WAN interface (`enp1s0`), and enable [masquerading](http://www.billauer.co.il/ipmasq-html.html) on it.
+At this point, we need to tell our machine to route packets between our LAN (`enp2s0`) and WAN interface (`enp1s0`), and enable [masquerading](http://www.billauer.co.il/ipmasq-html.html) on it.
 
-First of all, we need to enable packets forwarding at the kernel level:
+First of all, we need to enable packet forwarding:
 
 ```shell
 $ sudo sysctl -w net.ipv4.ip_forward=1
@@ -125,9 +125,9 @@ router lan2wan inface br0 outface enp1s0
         route all accept
 ```
 
-You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting your laptop to your available NIC port: **you should now be able to connect to the internet.**
+You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting your laptop to the available NIC port: **you should now be able to browse the internet.**
 
-**Do not forget** to edit `/etc/default/firehol` to enable autostart on boot:
+As a last point, **do not forget** to edit `/etc/default/firehol` to enable autostart on boot:
 
 ```shell
 $ cat /etc/default/firehold
@@ -139,7 +139,7 @@ START_FIREHOL=YES
 I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/) for a more complex setup. Morevoer, if you're really curious about what `firehol` did to your iptables, just drop `sudo firehol status` on the command line.
 
 
-### hostapd
+### Access Point
 TODO
 
 
@@ -152,8 +152,6 @@ Solution:
 sudo apt-get remove network-manager
 ```
 
-Dnsmasq + bridge: unknown network interface
-https://bugs.launchpad.net/ubuntu/+source/dnsmasq/+bug/1531184
 
 
 ath10k patches for 5Ghz:
