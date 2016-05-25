@@ -152,7 +152,7 @@ $ sudo nmcli radio wifi off && sudo rfkill unblock wlp5s0
 $ sudo apt-get remove network-manager
 ```
 
-You'll find below a curated but working 802.11n/2.4Ghz/WPA2-AES configuration file:
+You'll find below a curated (but working) 802.11n/2.4Ghz/WPA2-AES configuration file:
 
 ```shell
 $ cat /etc/hostapd/hostapd-test.conf 
@@ -222,4 +222,4 @@ iface br0 inet static
 ```
 
 
-Stay tuned for the next part!
+Stay tuned for the next part to enable a 802.11ac (5Ghz) access point!
