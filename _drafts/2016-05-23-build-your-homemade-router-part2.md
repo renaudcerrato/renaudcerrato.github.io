@@ -41,7 +41,7 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 
 
-## Configuration
+## Network configuration
 
 Let's first install the requirements! We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server
 
@@ -77,9 +77,72 @@ iface br0 inet static
     pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
 ```
 
+As you may see, `dnsmasq` will be started as soon as your bridge is up thanks to the `post-up` section. Its configuration is done through command line arguments only (`--conf-file=/dev/null`) and the process will be shutdown when the interface go down. 
+
 You can now restart your networking (`sudo service networking restart`) or simply reboot your router to check if your network configuration is properly setup. 
 
-However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (yet), **nor able to reach internet**.
+However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to reach internet** (more on this later), **nor able to connect to internet**.
+
+## Routing configuration
+
+At this point, we need to tell our machine to route packets between our LAN interface (`enp2s0`) and our WAN interface (`enp1s0`), and enable [masquerading](http://www.billauer.co.il/ipmasq-html.html) on it.
+
+First of all, we need to enable packets forwarding at the kernel level:
+
+```shell
+$ sudo sysctl -w net.ipv4.ip_forward=1
+$ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
+```
+
+The last command above will ensure that the configuration will survive to the next reboot.
+
+### FireHol
+
+If, like me, you read tons of documentations/tutorials/articles about `iptables` and still can't understand how an human brain could ever learn to write [iptables](https://help.ubuntu.com/community/IptablesHowTo) statements, you're right! Being required to write iptables statements today is like being required to write programs in assembly. Hopefully, the guys at [FireHol](https://firehol.org/) put a lot of efforts adding the required level of abstration to `iptables`.
+
+Let's install it first:
+
+```shell
+$ sudo apt-get install firehol
+```
+
+Thanks to `firehol`, our routing configuration is as simple as:
+
+```shell
+$ cat /etc/firehol/firehol.conf 
+version 6
+
+# Accept all client traffic on wan interface
+interface enp1s0 wan
+        client all accept
+
+# Accept all traffic on lan interface
+interface br0 lan
+        server all accept
+        client all accept
+
+# Route packets between both interface
+router lan2wan inface br0 outface enp1s0
+        masquerade
+        route all accept
+```
+
+You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting your laptop to your available NIC port: **you should now be able to connect to the internet now.**
+
+I won't go into details about the `firehol` syntax above, the configuration should be almost self-explanatory, but I'd recommend to give a look at their [documentation](https://firehol.org/documentation/).
+
+**Do not forget** to edit `/etc/default/firehol` to enable autostart on boot:
+
+```shell
+$ cat /etc/default/firehold
+...
+# To enable firehol at startup set START_FIREHOL=YES (init script variable)
+START_FIREHOL=YES
+```
+
+
+
+
 
 
 ### hostapd
