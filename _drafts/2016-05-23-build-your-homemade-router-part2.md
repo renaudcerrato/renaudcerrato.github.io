@@ -43,13 +43,13 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 ## Configuration
 
-Let's first install our requirements: we'll make use of [dnsmasq](https://help.ubuntu.com/community/Dnsmasq) as our DHCP/DNS server, and [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
+Let's first install the requirements: we'll make use of [dnsmasq](https://help.ubuntu.com/community/Dnsmasq) as our DHCP/DNS server, and [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
 
 ```shell
 $ sudo apt-get install dnsmasq hostapd
 ```
 
-Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a first draft:
+Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a _first draft_:
 
 ```shell
 $ cat /etc/network/interfaces
