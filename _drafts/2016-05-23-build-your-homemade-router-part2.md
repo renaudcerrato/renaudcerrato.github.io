@@ -189,11 +189,34 @@ You can easily test the configuration above by running the following command:
 $ sudo hostapd /etc/hostapd/hostapd-test.conf
 ```
 
-If everything goes well, **you should now be able to connect wirelessly**!
-
-However, **do not forget** to edit our `/etc/network/interfaces` accordingly:
+If everything goes well, **you should now be able to connect wirelessly**. However, **do not forget** to edit our `/etc/network/interfaces` to start `hostapd` right before the interface goes up:
 
 ```shell
+$ cat /etc/network/interfaces
+# Loopback
+auto lo
+iface lo inet loopback
+
+# WAN interface
+auto enp1s0
+iface enp1s0 inet dhcp
+
+# Bridge (LAN)
+auto br0 
+iface br0 inet static
+    address 192.168.1.1
+    network 192.168.1.0
+    netmask 255.255.255.0
+    broadcast 192.168.1.255 
+    bridge_ports enp2s0 wlp5s0
+    pre-up /usr/sbin/hostapd -P /var/run/hostapd.pid -B /etc/hostapd/hostapd-test.conf
+    post-up /usr/sbin/dnsmasq \
+    			--pid-file=/var/run/dnsmasq-br0.pid \
+                --conf-file=/dev/null \
+    			--interface=br0 --except-interface=lo \
+                --dhcp-range=192.168.1.10,192.168.1.150,24h               
+    pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
+    pre-down cat /var/run/hostapd.pid | xargs kill
 
 ```
 
