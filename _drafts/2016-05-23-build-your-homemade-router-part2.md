@@ -74,7 +74,7 @@ iface br0 inet static
                 --conf-file=/dev/null \
     			--interface=br0 --except-interface=lo \
                 --dhcp-range=192.168.1.10,192.168.1.150,24h
-    post-down cat /var/run/dnsmasq-br0.pid | kill
+    pre-down cat /var/run/dnsmasq-br0.pid | xargs kill
 ```
 
 
