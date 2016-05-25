@@ -79,6 +79,8 @@ iface br0 inet static
 
 As you may see, `dnsmasq` will be started as soon as the bridge is up thanks to the `post-up` section. Its configuration is done through command line arguments only (`--conf-file=/dev/null`) and the process will be shutdown when the interface go down. 
 
+> The documentation of every `dnsmasq` command line arguments can be found on the [man page]([dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html).
+
 You can now restart your networking (`sudo service networking restart`) or simply reboot the router to check if your network configuration is properly setup. 
 
 However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (more on this later), **nor able to connect to internet** (see below).
