@@ -148,8 +148,7 @@ $ sudo apt-get install hostapd
 Before going further, I'd recommend to uninstall `NetworkManager` since we don't need it anymore and because [of a known bug](https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1289047):
 
 ```
-$ sudo nmcli radio wifi off
-$ sudo rfkill unblock wlp5s0
+$ sudo nmcli radio wifi off && sudo rfkill unblock wlp5s0
 $ sudo apt-get remove network-manager
 ```
 
