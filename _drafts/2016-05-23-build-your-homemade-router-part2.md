@@ -49,7 +49,7 @@ Let's first install the requirements! We'll make use of [dnsmasq](http://manpage
 $ sudo apt-get install dnsmasq bridge-utils
 ```
 
-We'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a _preliminary_ configuration including a minimal `dnsmasq` setup:
+We'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a _preliminary_ configuration including our minimal `dnsmasq` setup:
 
 ```shell
 $ cat /etc/network/interfaces
@@ -81,7 +81,7 @@ As you may see, `dnsmasq` will be started as soon as your bridge is up thanks to
 
 You can now restart your networking (`sudo service networking restart`) or simply reboot your router to check if your network configuration is properly setup. 
 
-However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to reach internet** (more on this later), **nor able to connect to internet**.
+However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to connect wirelessly** (more on this later), **nor able to connect to internet**.
 
 ## Routing
 
