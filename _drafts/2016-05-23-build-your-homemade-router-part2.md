@@ -37,7 +37,7 @@ Supported interface modes:
 From the informations above, we can finally draw a diagram:
 
 
-    TODO: insert diagram
+![](/static/img/network-diagram.jpg)
 
 
 
