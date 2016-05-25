@@ -43,13 +43,13 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 ## Configuration
 
-Let's first install the requirements: we'll make use of [dnsmasq](https://help.ubuntu.com/community/Dnsmasq) as our DHCP/DNS server, and [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
+Let's first install the requirements: we'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server, and [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
 
 ```shell
 $ sudo apt-get install dnsmasq hostapd
 ```
 
-Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram. Here's a _first draft_:
+Then, we'll need to edit our [network interface configuration](http://manpages.ubuntu.com/manpages/xenial/man5/interfaces.5.html) to match our diagram, here's a _first draft_ :
 
 ```shell
 $ cat /etc/network/interfaces
@@ -69,6 +69,11 @@ iface br0 inet static
     netmask 255.255.255.0
     broadcast 192.168.1.255 
     bridge_ports enp2s0 wlp5s0
+    post-up /usr/sbin/dnsmasq -x /var/run/dnsmasq-br0.pid \
+                --conf-file=/dev/null \
+    			--interface=br0 --except-interface=lo \
+                --dhcp-range=192.168.1.50,192.168.1.150,255.255.255.0,24h
+    post-down cat /var/run/dnsmasq-br0.pid | kill
 ```
 
 ### dnsmasq
