@@ -141,16 +141,49 @@ I won't go into details about the `firehol` syntax above, the configuration shou
 
 ## Access Point
 
-With no surprises, we'll use [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
+With no surprise, we'll use [hostapd](https://wiki.gentoo.org/wiki/Hostapd) to manage our access-point:
 
 ```shell
 $ sudo apt-get install hostapd
 ```
 
-Before going further, I'd recommend to uninstall `NetworkManager`: mostly because we don't need it anymore, and partly because [of a known bug](https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1289047):
+Before going further, I'd recommend to uninstall `NetworkManager` since we don't need it anymore and because [of a known bug](https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1289047):
 
 ```
+$ sudo nmcli radio wifi off
+$ sudo rfkill unblock wlp5s0
 $ sudo apt-get remove network-manager
+```
+
+You'll find below a working 802.11n configuration file (2.4Ghz, WPA2-AES):
+
+```shell
+$ cat /etc/hostapd/hostapd-test.conf 
+#### Interface configuration ####
+interface=wlp5s0
+bridge=br0
+driver=nl80211
+
+##### IEEE 802.11 related configuration #####
+ssid=MyRouter
+hw_mode=g
+channel=1
+auth_algs=1
+wmm_enabled=1
+
+##### IEEE 802.11n related configuration #####
+ieee80211n=1
+
+##### WPA/IEEE 802.11i configuration #####
+wpa=2
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+wpa_passphrase=YouCantGuess
+```
+
+You can easily test it by running the following command:
+
+```shell
 ```
 
 
