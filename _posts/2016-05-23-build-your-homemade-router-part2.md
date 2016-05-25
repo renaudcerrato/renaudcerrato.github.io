@@ -6,9 +6,9 @@ layout: post
 
 This post is the second part of the series "Build your homemade router". The [first part](https://renaudcerrato.github.io/2016/05/21/build-your-homemade-router-part1/) covered the material installation.
 
-That second part will cover the configuration of your freshly installed machine and, before going further, we'll need draw what we want to achieve. First of all, let's see what are the name of the interfaces:
+That second part will cover the configuration of your freshly installed machine and, before going further, we'll need to draw what we want to achieve. Let's see what are the name of the interfaces:
 
-```bash
+```shell
 $ ifconfig
 enp1s0    Link encap:Ethernet  HWaddr xx:xx:xx:xx:xx:xx           
           ...
@@ -43,7 +43,7 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 ## Network
 
-Let's first install the requirements! We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server:
+We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server:
 
 ```shell
 $ sudo apt-get install dnsmasq bridge-utils
