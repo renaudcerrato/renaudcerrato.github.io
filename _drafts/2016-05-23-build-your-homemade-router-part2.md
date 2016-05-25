@@ -41,7 +41,7 @@ From the informations above, we can finally draw our diagram: the first NIC will
 
 
 
-## Network configuration
+## Network
 
 Let's first install the requirements! We'll make use of [dnsmasq](http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html) as our DHCP/DNS server
 
@@ -83,7 +83,7 @@ You can now restart your networking (`sudo service networking restart`) or simpl
 
 However, please note that while you should be able to get DHCP leases from `enp2s0` at this point, **you won't be able to reach internet** (more on this later), **nor able to connect to internet**.
 
-## Routing configuration
+## Routing
 
 At this point, we need to tell our machine to route packets between our LAN interface (`enp2s0`) and our WAN interface (`enp1s0`), and enable [masquerading](http://www.billauer.co.il/ipmasq-html.html) on it.
 
