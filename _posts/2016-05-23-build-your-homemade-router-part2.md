@@ -187,7 +187,9 @@ $ sudo hostapd /etc/hostapd/hostapd-test.conf
 
 > You'll find the [documentation](http://w1.fi/gitweb/gitweb.cgi?p=hostap.git;a=blob_plain;f=hostapd/hostapd.conf) of every available options into the `/usr/share/doc/hostapd/examples/`] directory. 
 
-If everything goes well, **you should now be able to connect wirelessly**. However, **do not forget** to edit our `/etc/network/interfaces` to start `hostapd` right before the interface goes up:
+If everything goes well, **you should now be able to connect wirelessly**. However, **do not forget** to edit our interface configuration to start `hostapd` right before the interface goes up. 
+
+**Here's our final `/etc/network/interfaces`**:
 
 ```shell
 $ cat /etc/network/interfaces
