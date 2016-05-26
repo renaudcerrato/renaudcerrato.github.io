@@ -17,5 +17,7 @@ make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules_prepare && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp SUBDIRS=scripts/mod && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules SUBDIRS=drivers/net/wireless/ath
 
+sudo depmod -a
+
 
 
