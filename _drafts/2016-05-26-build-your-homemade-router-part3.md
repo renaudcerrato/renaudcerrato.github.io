@@ -22,7 +22,7 @@ make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules_prepare && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp SUBDIRS=scripts/mod && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules SUBDIRS=drivers/net/wireless/ath
 
-cd ~/tmp && sudo find -wholename ~/tmp/drivers/net/wireless/ath/*.ko -exec cp {} /lib/modules/${UNAME}/kernel/{} \;
+cd ~/tmp && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${UNAME}/kernel/{} \;
 
 sudo depmod -a
 
