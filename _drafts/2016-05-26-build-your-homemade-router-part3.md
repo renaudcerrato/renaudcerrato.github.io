@@ -13,6 +13,7 @@ cp /boot/config-$UNAME  ~/tmp/.config && cp /usr/src/linux-headers-${UNAME}/Modu
 
 apt-get source linux-image-$UNAME
 
+cd linux-${UNAME%%-*}
 
 curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 
