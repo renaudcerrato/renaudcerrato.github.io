@@ -13,8 +13,8 @@ cp /boot/config-$UNAME  ~/tmp/.config && cp /usr/src/linux-headers-${UNAME}/Modu
 
 apt-get source linux-image-$UNAME
 
-cd linux-${UNAME%%-*}
-curl https://gist.github.com/renaudcerrato/bc943d8b5fe42622d533ea3de929c488/raw/d017fcaf85cec07c17d5d0cc9201fae3669cbf1b/402-ath_regd_optional.patch | patch -p1 -b
+
+curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp oldconfig && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp prepare && \
@@ -22,7 +22,7 @@ make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules_prepare && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp SUBDIRS=scripts/mod && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules SUBDIRS=drivers/net/wireless/ath
 
-sudo cp ~/tmp/drivers/net/wireless/ath/ath.ko /lib/modules/${UNAME}/kernel/drivers/net/wireless/ath/
+cd ~/tmp && sudo find -wholename ~/tmp/drivers/net/wireless/ath/*.ko -exec cp {} /lib/modules/${UNAME}/kernel/{} \;
 
 sudo depmod -a
 
