@@ -11,6 +11,7 @@ apt-get source linux-image-$UNAME
 mkdir ~/tmp
 cp /boot/config-$UNAME  ~/tmp/.config && cp /usr/src/linux-headers-${UNAME}/Module.symvers ~/tmp/
 cd linux-${UNAME%%-*}
+patch -p1 -b < ../402-ath_regd_optional.patch
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp oldconfig && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp prepare && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules_prepare && \
