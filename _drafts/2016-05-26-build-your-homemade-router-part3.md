@@ -5,11 +5,15 @@ layout: post
 
 1-enable source in etc/apt/sources.list
 
+## Configuration
+
 UNAME=$(uname -r)
 sudo apt-get build-dep linux-image-$UNAME
 
 mkdir ~/tmp
 cp /boot/config-$UNAME  ~/tmp/.config && cp /usr/src/linux-headers-${UNAME}/Module.symvers ~/tmp/
+
+## Compilation
 
 apt-get source linux-image-$UNAME
 
@@ -23,10 +27,11 @@ make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules_prepare && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp SUBDIRS=scripts/mod && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules SUBDIRS=drivers/net/wireless/ath
 
-cd ~/tmp && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${UNAME}/kernel/{} \;
+## Installation
 
-sudo depmod -a
+cd ~/tmp && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${UNAME}/kernel/{} \; && sudo depmod -a
 
+#
 sudo iw reg set US 
 cat /etc/default/crda
 
