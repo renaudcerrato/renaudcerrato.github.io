@@ -18,8 +18,14 @@ make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules_prepare && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp SUBDIRS=scripts/mod && \
 make EXTRAVERSION=-${UNAME#*-} O=~/tmp modules SUBDIRS=drivers/net/wireless/ath
 
+sudo cp ~/tmp/drivers/net/wireless/ath/ath.ko /lib/modules/${UNAME}/kernel/drivers/net/wireless/ath/
+
 sudo depmod -a
-sudo update-initramfs -u
+
+
+
+
+https://wireless.wiki.kernel.org/en/developers/regulatory/statement
 
 
 
