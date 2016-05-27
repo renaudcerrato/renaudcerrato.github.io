@@ -33,8 +33,7 @@ cd ~/build && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install
 
 ## Avant 
  ```shell
- $ iw list
-Wiphy phy0
+$ iw list
         ...
                 Frequencies:
                         * 2412 MHz [1] (20.0 dBm)
