@@ -21,11 +21,10 @@ cd linux-${VERSION%%-*}
 
 curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 
-make EXTRAVERSION=-${VERSION#*-} O=~/build oldconfig && \
-make EXTRAVERSION=-${VERSION#*-} O=~/build prepare && \
-make EXTRAVERSION=-${VERSION#*-} O=~/build modules_prepare && \
-make EXTRAVERSION=-${VERSION#*-} O=~/build SUBDIRS=scripts/mod && \
-make EXTRAVERSION=-${VERSION#*-} O=~/build modules SUBDIRS=drivers/net/wireless/ath
+make O=~/build oldconfig && \
+make O=~/build prepare && \
+make O=~/build scripts && \
+make O=~/build SUBDIRS=drivers/net/wireless/ath modules
 
 ## Installation
 
