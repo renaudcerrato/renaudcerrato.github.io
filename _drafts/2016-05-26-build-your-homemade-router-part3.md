@@ -90,7 +90,7 @@ $ iw list
        ...
 ```
 
-From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? Well... The `no IR` flag means you cannot use modes of operation that require you to initiate radiation first! 
+From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? Well... The `no IR` flag stands for `no-initiating-radiation` and means you cannot use modes of operation that require you to initiate radiation first! 
 
 ![](http://gph.to/20LFaSu)
 
