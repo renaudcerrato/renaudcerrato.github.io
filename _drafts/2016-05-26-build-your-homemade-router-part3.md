@@ -95,7 +95,6 @@ From the (curated) output above, we can see that the chipset supports channels 1
 ![](http://gph.to/20LFaSu)
 
 
-
 ## Configuration
 
 VERSION=$(uname -r)
