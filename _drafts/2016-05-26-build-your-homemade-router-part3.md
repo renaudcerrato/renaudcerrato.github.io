@@ -101,7 +101,22 @@ The `no IR` flag stands for _no-initiating-radiation_ and that means **you canno
 
 The above situation is due to the [Linux regulatory compliance](https://wireless.wiki.kernel.org/en/developers/regulatory/statement), which regulate usage of the radio spectrum [depending on a territory basis](https://en.wikipedia.org/wiki/List_of_WLAN_channels).
 
-But, wait! I'm living in the US and according to the FCC, I should be able to emit on channels 36-48, so what's wrong?
+But, wait! I'm living in the US and according to the FCC, I should be able to emit on channels 36-48, so what's wrong? Let's take a look at the regulatory domain currently in use:
+
+```shell
+$ iw reg get
+country 00: DFS-UNSET
+        (2402 - 2472 @ 40), (N/A, 20), (N/A)
+        (2457 - 2482 @ 40), (N/A, 20), (N/A), NO-IR
+        (2474 - 2494 @ 20), (N/A, 20), (N/A), NO-OFDM, NO-IR
+        (5170 - 5250 @ 80), (N/A, 20), (N/A), NO-IR
+        (5250 - 5330 @ 80), (N/A, 20), (0 ms), DFS, NO-IR
+        (5490 - 5730 @ 160), (N/A, 20), (0 ms), DFS, NO-IR
+        (5735 - 5835 @ 80), (N/A, 20), (N/A), NO-IR
+        (57240 - 63720 @ 2160), (N/A, 0), (N/A)
+```
+
+The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain), that mean it use minimum values allowed in every country!
 
 
 VERSION=$(uname -r)
