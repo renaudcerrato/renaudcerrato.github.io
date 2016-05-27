@@ -116,7 +116,7 @@ country 00: DFS-UNSET
         (57240 - 63720 @ 2160), (N/A, 0), (N/A)
 ```
 
-The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain), that mean it use minimum values allowed in every country!
+The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain), that mean it is using minimum values allowed in every country!
 
 
 VERSION=$(uname -r)
