@@ -7,29 +7,29 @@ layout: post
 
 ## Configuration
 
-UNAME=$(uname -r)
-sudo apt-get build-dep linux-image-$UNAME
+VERSION=$(uname -r)
+sudo apt-get build-dep linux-image-$VERSION
 
 mkdir ~/build
-cp /boot/config-$UNAME  ~/build/.config && cp /usr/src/linux-headers-${UNAME}/Module.symvers ~/build/
+cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
 
 ## Compilation
 
-apt-get source linux-image-$UNAME
+apt-get source linux-image-$VERSION
 
-cd linux-${UNAME%%-*}
+cd linux-${VERSION%%-*}
 
 curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 
-make EXTRAVERSION=-${UNAME#*-} O=~/build oldconfig && \
-make EXTRAVERSION=-${UNAME#*-} O=~/build prepare && \
-make EXTRAVERSION=-${UNAME#*-} O=~/build modules_prepare && \
-make EXTRAVERSION=-${UNAME#*-} O=~/build SUBDIRS=scripts/mod && \
-make EXTRAVERSION=-${UNAME#*-} O=~/build modules SUBDIRS=drivers/net/wireless/ath
+make EXTRAVERSION=-${VERSION#*-} O=~/build oldconfig && \
+make EXTRAVERSION=-${VERSION#*-} O=~/build prepare && \
+make EXTRAVERSION=-${VERSION#*-} O=~/build modules_prepare && \
+make EXTRAVERSION=-${VERSION#*-} O=~/build SUBDIRS=scripts/mod && \
+make EXTRAVERSION=-${VERSION#*-} O=~/build modules SUBDIRS=drivers/net/wireless/ath
 
 ## Installation
 
-cd ~/build && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${UNAME}/kernel/{} \; && sudo depmod -a
+cd ~/build && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${VERSION}/kernel/{} \; && sudo depmod -a
 
 #
 sudo iw reg set US 
