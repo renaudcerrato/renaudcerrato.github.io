@@ -90,12 +90,19 @@ $ iw list
        ...
 ```
 
-From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? Well... The `no IR` flag stands for `no-initiating-radiation` and that means **you cannot use that mode of operation if that require you to initiate radiation first**, and that includes **beacons** of course.
+From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? 
+
+The `no IR` flag stands for _no-initiating-radiation_ and that means **you cannot use that mode of operation if that require you to initiate radiation first**, and that includes **beacons** (of course). In other words: **you cannot run an access-point on those channels!**
 
 ![](http://gph.to/20LFaSu)
 
 
-## Configuration
+## Regulatory compliance
+
+The above situation is due to the [Linux regulatory compliance](https://wireless.wiki.kernel.org/en/developers/regulatory/statement), which regulate usage of the radio spectrum [depending on a territory basis](https://en.wikipedia.org/wiki/List_of_WLAN_channels).
+
+But, wait! I'm living in the US and according to the FCC, I should be able to emit on channels 36-48, so what's wrong?
+
 
 VERSION=$(uname -r)
 sudo apt-get build-dep linux-image-$VERSION
