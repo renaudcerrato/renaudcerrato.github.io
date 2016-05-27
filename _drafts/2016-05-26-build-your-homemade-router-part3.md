@@ -6,7 +6,7 @@ title: Build your homemade router (part 3)
 
 This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration of a very basic 802.11n/2.4Ghz access point.
 
-According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to 5Ghz channels.
+According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is fully 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to the nirvana (a.k.a 5Ghz channels).
 
 Let's ask the system about it:
 
@@ -90,7 +90,7 @@ $ iw list
        ...
 ```
 
-From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? Well... The `no IR` flag stands for `no-initiating-radiation` and means you cannot use modes of operation that require you to initiate radiation first! 
+From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? Well... The `no IR` flag stands for `no-initiating-radiation` and that means **you cannot use that mode of operation if that require you to initiate radiation first**, and that includes **beacons** of course.
 
 ![](http://gph.to/20LFaSu)
 
