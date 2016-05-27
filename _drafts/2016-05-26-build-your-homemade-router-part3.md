@@ -1,9 +1,12 @@
 ---
 published: false
 layout: post
+title: Build your homemade router (part 3)
 ---
 
-1-enable source in etc/apt/sources.list
+This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration and the setup of a 802.11n/2.4Ghz access point.
+
+
 
 ## Configuration
 
