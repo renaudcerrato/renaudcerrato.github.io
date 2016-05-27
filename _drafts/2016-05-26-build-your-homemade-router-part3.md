@@ -31,10 +31,43 @@ make EXTRAVERSION=-${VERSION#*-} O=~/build modules SUBDIRS=drivers/net/wireless/
 
 cd ~/build && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${VERSION}/kernel/{} \; && sudo depmod -a
 
-#
-sudo iw reg set US 
-cat /etc/default/crda
 
+```shell
+#### Interface configuration ####
+
+interface=wlp5s0
+bridge=br0
+driver=nl80211
+
+##### IEEE 802.11 related configuration #####
+
+ssid=dd-wrt
+hw_mode=a
+channel=0
+auth_algs=1
+wmm_enabled=1
+country_code=US
+ieee80211d=1
+ieee80211h=0
+
+##### IEEE 802.11n related configuration #####
+
+ieee80211n=1
+ht_capab=[HT40+][SHORT-GI-40][TX-STBC][RX-STBC1][DSSS_CK-40][LDPC][MAX-AMSDU-7935]
+
+##### IEEE 802.11ac related configuration #####
+
+ieee80211ac=1
+vht_capab=[MAX-MPDU-11454][RXLDPC][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][MAX-A-MPDU-LEN-EXP7][TX-ANTENNA-PATTERN][RX-ANTENNA-PATTERN]
+vht_oper_chwidth=1
+
+##### WPA/IEEE 802.11i configuration #####
+
+wpa=2
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+wpa_passphrase=00112233445566778899AABBCC
+```
 
 
 
