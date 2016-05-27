@@ -6,7 +6,93 @@ title: Build your homemade router (part 3)
 
 This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration of a very basic 802.11n/2.4Ghz access point.
 
-According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is fully 802.11ac capable and we should 5Ghz radio and can
+According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to 5Ghz channels.
+
+Let's ask the system about it:
+
+```
+$ iw list
+        ...
+                Frequencies:
+                        * 2412 MHz [1] (20.0 dBm)
+                        * 2417 MHz [2] (20.0 dBm)
+                        * 2422 MHz [3] (20.0 dBm)
+                        * 2427 MHz [4] (20.0 dBm)
+                        * 2432 MHz [5] (20.0 dBm)
+                        * 2437 MHz [6] (20.0 dBm)
+                        * 2442 MHz [7] (20.0 dBm)
+                        * 2447 MHz [8] (20.0 dBm)
+                        * 2452 MHz [9] (20.0 dBm)
+                        * 2457 MHz [10] (20.0 dBm)
+                        * 2462 MHz [11] (20.0 dBm)
+                        * 2467 MHz [12] (disabled)
+                        * 2472 MHz [13] (disabled)
+                        * 2484 MHz [14] (disabled)
+        ...
+                Frequencies:
+                        * 5180 MHz [36] (17.0 dBm) (no IR)
+                        * 5200 MHz [40] (17.0 dBm) (no IR)
+                        * 5220 MHz [44] (17.0 dBm) (no IR)
+                        * 5240 MHz [48] (17.0 dBm) (no IR)
+                        * 5260 MHz [52] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5280 MHz [56] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5300 MHz [60] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5320 MHz [64] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5500 MHz [100] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5520 MHz [104] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5540 MHz [108] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5560 MHz [112] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5580 MHz [116] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5600 MHz [120] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5620 MHz [124] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5640 MHz [128] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5660 MHz [132] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5680 MHz [136] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5700 MHz [140] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5720 MHz [144] (23.0 dBm) (no IR, radar detection)
+                          DFS state: usable (for 74 sec)
+                          DFS CAC time: 60000 ms
+                        * 5745 MHz [149] (30.0 dBm) (no IR)
+                        * 5765 MHz [153] (30.0 dBm) (no IR)
+                        * 5785 MHz [157] (30.0 dBm) (no IR)
+                        * 5805 MHz [161] (30.0 dBm) (no IR)
+                        * 5825 MHz [165] (30.0 dBm) (no IR)
+       ...
+```
+
+![](http://gph.to/20LFaSu)
+
+
 
 ## Configuration
 
