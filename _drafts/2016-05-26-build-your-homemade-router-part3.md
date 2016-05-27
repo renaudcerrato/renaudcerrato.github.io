@@ -99,7 +99,7 @@ The `no IR` flag stands for _no-initiating-radiation_ and that means **you canno
 
 ## Regulatory compliance
 
-The above situation is due to the [Linux regulatory compliance](https://wireless.wiki.kernel.org/en/developers/regulatory/statement), which regulate usage of the radio spectrum [depending on a territory basis](https://en.wikipedia.org/wiki/List_of_WLAN_channels).
+The above situation is because of the [Linux regulatory compliance](https://wireless.wiki.kernel.org/en/developers/regulatory/statement), which regulates usage of the radio spectrum [depending on a territory basis](https://en.wikipedia.org/wiki/List_of_WLAN_channels).
 
 But, wait! I'm living in the US and according to the FCC, I should be able to emit on channels 36-48, so what's wrong? Let's take a look at the regulatory domain currently in use:
 
