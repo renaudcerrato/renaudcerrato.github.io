@@ -116,18 +116,27 @@ country 00: DFS-UNSET
         (57240 - 63720 @ 2160), (N/A, 0), (N/A)
 ```
 
-The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain), that mean it is currently using minimum values allowed in every country - thus disallowing emission-first on the 5GHz bands.
+The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain) (or unset), that mean it is currently using minimum values allowed in every country.
 
-Unfortunately, trying to manually set the regulatory domain through `sudo iw reg set US` won't work because the Atheros card has been shipped with the [_world regulatory domain_](https://wireless.wiki.kernel.org/en/users/drivers/ath#eeprom_world_regulatory_domain) into EEPROM, and all Atheros custom world regulatory domains have all 5 GHz channels marked with a passive scan flags:
+Unfortunately, trying to manually set the regulatory domain through `sudo iw reg set US` won't work because the card has been shipped with the [_world regulatory domain_](https://wireless.wiki.kernel.org/en/users/drivers/ath#eeprom_world_regulatory_domain) burned into EEPROM, and all Atheros custom world regulatory domains have all 5 GHz channels marked with a passive scan flags:
 
 ```shell
 $ dmesg | grep EEPROM
 [   12.123068] ath: EEPROM regdomain: 0x6c
 ```
 
-## Patching 
+![](http://i.giphy.com/bcEKH8GjRJovm.gif)
 
+## Patch it!
 
+Fortunately, the regulatory compliance is handled at the driver level and the driver is... open-source! The (straightforward) [patch]((https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch)) can be found in the Open-Wrt source.
+
+First of all, be sure to enable the sources repository from _/etc/apt/sources.list_:
+
+```shell
+$ cat /etc/apt/sources.list
+
+```
 VERSION=$(uname -r)
 sudo apt-get build-dep linux-image-$VERSION
 
