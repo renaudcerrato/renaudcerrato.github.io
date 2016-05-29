@@ -129,32 +129,41 @@ $ dmesg | grep EEPROM
 
 ## Patch it!
 
-Fortunately, the regulatory compliance is handled at the driver level and the driver is... open-source! The (straightforward) [patch]((https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch)) can be found in the Open-Wrt source.
+Fortunately, the regulatory compliance is handled at the driver level and the driver is... open-source! The original [patch](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch) can be found in the Open-WRT source tree.
 
-First of all, be sure to enable the sources repository from _/etc/apt/sources.list_:
+First of all, be sure to enable the source repository from _/etc/apt/sources.list_:
 
 ```shell
 $ cat /etc/apt/sources.list
+...
+deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted 
+...
+```
+
+Then, prepare the build environment:
 
 ```
-VERSION=$(uname -r)
-sudo apt-get build-dep linux-image-$VERSION
+$ VERSION=$(uname -r)
+$ sudo apt-get build-dep linux-image-$VERSION
+$ mkdir ~/build && cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
+```
 
-mkdir ~/build
-cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
+Grab the source of your kernel:
 
-## Compilation
+```shell
+$ apt-get source linux-image-$VERSION
+```
 
-apt-get source linux-image-$VERSION
+> I fixed the original patch in order to be successfully applied  Since the original patch 
 
-cd linux-${VERSION%%-*}
+```
+$ curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 
-curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
-
-make O=~/build oldconfig && \
-make O=~/build prepare && \
-make O=~/build scripts && \
-make O=~/build SUBDIRS=drivers/net/wireless/ath modules
+$ make O=~/build oldconfig
+$ make O=~/build prepare
+$ make O=~/build scripts
+$ make O=~/build SUBDIRS=drivers/net/wireless/ath modules
+```
 
 ## Installation
 
