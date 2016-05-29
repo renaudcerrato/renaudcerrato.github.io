@@ -154,7 +154,7 @@ Grab the source of your kernel:
 $ apt-get source linux-image-$VERSION
 ```
 
-> I fixed the original patch in order to be successfully applied  Since the original patch 
+Since the Open-Wrt patch can't be applied against our Ubuntu tree "as is", I'm using a _slightly_ [modified version of it](https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b): 
 
 ```
 $ curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
