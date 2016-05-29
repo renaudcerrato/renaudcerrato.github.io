@@ -118,6 +118,15 @@ country 00: DFS-UNSET
 
 The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain), that mean it is currently using minimum values allowed in every country - thus disallowing emission-first on the 5GHz bands.
 
+Unfortunately, trying to manually set the regulatory domain through `sudo iw reg set US` won't work because the Atheros card has been shipped with the [_world regulatory domain_](https://wireless.wiki.kernel.org/en/users/drivers/ath#eeprom_world_regulatory_domain) into EEPROM, and all Atheros custom world regulatory domains have all 5 GHz channels marked with a passive scan flags:
+
+```shell
+$ dmesg | grep EEPROM
+[   12.123068] ath: EEPROM regdomain: 0x6c
+```
+
+## Patching 
+
 
 VERSION=$(uname -r)
 sudo apt-get build-dep linux-image-$VERSION
@@ -541,6 +550,3 @@ wpa_passphrase=00112233445566778899AABBCC
 
 
 https://wireless.wiki.kernel.org/en/developers/regulatory/statement
-
-
-
