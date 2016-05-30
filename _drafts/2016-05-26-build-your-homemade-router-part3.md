@@ -6,7 +6,7 @@ title: Build your homemade router (part 3)
 
 This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration of a very basic 802.11n/2.4Ghz access point.
 
-According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is fully 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to the nirvana (a.k.a 5Ghz channels).
+According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is fully 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to the 5Ghz channels.
 
 Let's ask the system about it:
 
@@ -129,7 +129,7 @@ $ dmesg | grep EEPROM
 
 ## Patch it!
 
-Fortunately, the regulatory compliance is handled at the driver level and the driver is... open-source! The original [patch](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch) can be found in the Open-WRT source tree.
+Fortunately, the regulatory compliance is dealed at the driver level which is... open-source. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
 
 First of all, be sure to enable the source repository from _/etc/apt/sources.list_:
 
@@ -140,12 +140,11 @@ deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
 ...
 ```
 
-Then, prepare the build environment:
+Then, prepare the build environment by installing the required dependency:
 
 ```
 $ VERSION=$(uname -r)
 $ sudo apt-get build-dep linux-image-$VERSION
-$ mkdir ~/build && cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
 ```
 
 Grab the source of your kernel:
@@ -154,11 +153,16 @@ Grab the source of your kernel:
 $ apt-get source linux-image-$VERSION
 ```
 
-Since the Open-Wrt patch can't be applied against our Ubuntu tree "as is", I'm using a _slightly_ [modified version of it](https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b): 
+Since the original Open-WRT patch can't be applied "as is" against our Ubuntu tree, I had to _slightly_ [modify it](https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b): 
 
+```shell
+$ cd linux-${VERSION%%-*}
+$ wget -O - https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 ```
-$ curl -L https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 
+We should be ready to build the m
+```shell
+$ mkdir ~/build && cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
 $ make O=~/build oldconfig
 $ make O=~/build prepare
 $ make O=~/build scripts
