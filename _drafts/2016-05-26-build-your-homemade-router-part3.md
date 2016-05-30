@@ -177,7 +177,8 @@ $ sudo install -b ~/build/drivers/net/wireless/ath/ath.ko /lib/modules/${VERSION
 $ sudo depmod -a
 ```
 
-## Aprés
+Reboot, and voilà!
+
 
 ```shell
 $ iw list
