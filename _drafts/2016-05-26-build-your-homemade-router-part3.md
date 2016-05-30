@@ -160,7 +160,8 @@ $ cd linux-${VERSION%%-*}
 $ wget -O - https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 ```
 
-We should be ready to build the m
+Eveything should be ready for the build:
+
 ```shell
 $ mkdir ~/build && cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
 $ make O=~/build oldconfig
