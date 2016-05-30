@@ -129,7 +129,7 @@ $ dmesg | grep EEPROM
 
 ## Patch it!
 
-Fortunately, the regulatory compliance is dealed at the driver level which is... open-source. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
+Fortunately, the regulatory compliance is dealed at the driver level (which is open-source) and can be patched accordingly to our needs. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
 
 First of all, be sure to enable the source repository from _/etc/apt/sources.list_:
 
