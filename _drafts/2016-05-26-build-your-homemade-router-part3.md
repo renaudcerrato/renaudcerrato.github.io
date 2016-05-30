@@ -170,9 +170,12 @@ $ make O=~/build scripts
 $ make O=~/build SUBDIRS=drivers/net/wireless/ath modules
 ```
 
-## Installation
+If everything goes well, we can now copy our patched driver over the previous one: 
 
-cd ~/build && sudo find . -wholename *drivers/net/wireless/ath*.ko -exec install -b {} /lib/modules/${VERSION}/kernel/{} \; && sudo depmod -a
+```shell
+$ sudo install -b ~/build/drivers/net/wireless/ath/ath.ko /lib/modules/${VERSION}/kernel/~/build/drivers/net/wireless/ath/ath.ko
+$ sudo depmod -a
+```
 
 ## Aprés
 
