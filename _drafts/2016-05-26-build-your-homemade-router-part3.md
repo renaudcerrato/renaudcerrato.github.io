@@ -129,7 +129,7 @@ $ dmesg | grep EEPROM
 
 ## Patch it!
 
-Fortunately, the regulatory compliance is dealed at the driver level (which is open-source) and can be patched accordingly to our needs. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
+Fortunately, the regulatory compliance is dealed at the driver level (which is open-source) and can be easily patched. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
 
 First of all, be sure to enable the source repository from _/etc/apt/sources.list_:
 
@@ -147,7 +147,7 @@ $ VERSION=$(uname -r)
 $ sudo apt-get build-dep linux-image-$VERSION
 ```
 
-Grab the source of your kernel:
+Grab the source of your current kernel:
 
 ```shell
 $ apt-get source linux-image-$VERSION
@@ -160,7 +160,7 @@ $ cd linux-${VERSION%%-*}
 $ wget -O - https://gist.github.com/renaudcerrato/ba9e200af202bb4f651fd2ba09adea6b/raw/ab36b11bb0c6357cc0513b2c6500a1841c8dd252/402-ath_regd_optional.patch | patch -p1 -b
 ```
 
-Eveything should be ready for the build:
+Eveything should now be ready for the build:
 
 ```shell
 $ mkdir ~/build && cp /boot/config-$VERSION  ~/build/.config && cp /usr/src/linux-headers-${VERSION}/Module.symvers ~/build/
