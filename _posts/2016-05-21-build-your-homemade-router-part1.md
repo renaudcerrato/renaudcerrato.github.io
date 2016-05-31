@@ -47,4 +47,4 @@ Since that mini-ITX case comes with 3 pre-cut holes for your antenna needs, I wo
 Since I'm using Ubuntu at home, I choosed [Lubuntu 16.04LTS](http://lubuntu.net): an Ubuntu based distro with a lightweight desktop environment (if ever needed). If you didn't gave up at this point, I don't need to go into details about the installation, right?
 
 
-The [next part](/2016-05-23-build-your-homemade-router-part2) will configure your freshly installed router.
+The [next part](/2016/05/23/build-your-homemade-router-part2) will configure your freshly installed router.
