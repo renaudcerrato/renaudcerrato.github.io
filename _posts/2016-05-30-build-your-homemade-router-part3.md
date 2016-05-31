@@ -125,7 +125,7 @@ $ dmesg | grep EEPROM
 [   12.123068] ath: EEPROM regdomain: 0x6c
 ```
 
-![](http://i.giphy.com/bcEKH8GjRJovm.gif)
+![](http://i.giphy.com/bcEKH8GjRJovm.gif){: .center-image }
 
 ## Patch it!
 
