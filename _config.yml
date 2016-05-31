@@ -4,14 +4,12 @@ highlighter:      rouge
 
 # Permalinks
 permalink:        pretty
-#relative_permalinks: true
 
 # Setup
 title:            Renaud Cerrato
 tagline:          ''
 description:      '<font face="monospace" size="3"># cat /dev/brain > /dev/keyboard</font>'
 url:              http://renaudcerrato.github.io
-#baseurl:          /
 
 author:
   name:           'Renaud Cerrato'
