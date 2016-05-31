@@ -21,6 +21,7 @@ paginate:         5
 
 gems:
   - jekyll-sitemap
+  - jekyll-seo-tag
   
 # Custom vars
 version:          2.1.0
