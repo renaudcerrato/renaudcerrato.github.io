@@ -226,4 +226,4 @@ iface br0 inet static
 ```
 
 
-Stay tuned for the next part to enable a 802.11ac (5Ghz) access point!
+The [next part](/2016/05/30/build-your-homemade-router-part3/) will enable 802.11ac (5Ghz)!
