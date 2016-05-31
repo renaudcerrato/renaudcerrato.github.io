@@ -7,13 +7,6 @@ I've spent the last decade flashing my home routers to DD-WRT but was never tota
 
 Since I needed to upgrade my [Buffalo WHR-300HP2](http://www.buffalotech.com/products/wireless/single-band/airstation-highpower-n300-wireless-router-2) to something able to get the most of my 200Mbps cable connection, I recently decided to build my own Ubuntu 16.04LTS based router.
 
-This post is the first part of a multiple post serie:
-
-1. Material Installation (this part)
-2. [Preliminary configuration](/2016/05/23/build-your-homemade-router-part2/) (part 2)
-3. [Enabling 802.11ac](/2016/05/30/build-your-homemade-router-part3/) (part 3)
-
-
 ## Bill of Material
 
 - [Gigabyte GA-J1900N-D3V](http://www.amazon.com/Gigabyte-Built-Celeron-Motherboard-GA-J1900N-D3V/dp/B00IW99S4A) (mini-ITX, J1900 Quad-Core 2Ghz Celeron, dual LAN)
