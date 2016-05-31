@@ -94,7 +94,7 @@ From the (curated) output above, we can see that the chipset supports channels 1
 
 The `no IR` flag stands for _no-initiating-radiation_ and that means **you cannot use that mode of operation if that require you to initiate radiation first**, and that includes **beacons** (of course). In other words: **you cannot run an access-point on those channels!**
 
-![](http://gph.to/20LFaSu)
+![](http://gph.to/20LFaSu){: .center-image }
 
 
 ## Regulatory compliance
