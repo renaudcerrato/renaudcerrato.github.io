@@ -4,9 +4,9 @@ title: Build your homemade router (part 2)
 layout: post
 ---
 
-This post is the second part of the series "Build your homemade router". The [first part](https://renaudcerrato.github.io/2016/05/21/build-your-homemade-router-part1/) covered the material installation.
+This post is the second part of the series "Build your homemade router". The [first part](https://renaudcerrato.github.io/2016/05/21/build-your-homemade-router-part1/) covered the material installation, that second part will cover the configuration of your freshly installed hardware.
 
-That second part will cover the configuration of your freshly installed hardware and, before going further, we'll need to draw what we want to achieve. Let's see what are the name of the interfaces:
+Before going further, we'll need to draw what we want to achieve. Let's see what are the name of the interfaces:
 
 ```shell
 $ ifconfig
