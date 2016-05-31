@@ -5,7 +5,7 @@ layout: post
 ---
 I've spent the last decade flashing my home routers to DD-WRT but while this is still a lot better than using stock firmwares, I was never really satisfied about it because of the cheap (and poorly supported) hardware, unstable builds, and/or unfixed bugs. Not even talking of [the controversy](http://www.wi-fiplanet.com/columns/article.php/3816236/The-DD-WRT-Controversy.htm) about it.  
 
-Since I needed to upgrade my [Buffalo WHR-300HP2](http://www.buffalotech.com/products/wireless/single-band/airstation-highpower-n300-wireless-router-2) to something able to get the most of my 200Mbps cable connection, I recently decided to build my own Ubuntu 16.04LTS based router.
+Since I needed to upgrade my [Buffalo WHR-300HP2](http://www.buffalotech.com/products/wireless/single-band/airstation-highpower-n300-wireless-router-2) to something able to get the most of my 200Mbps cable connection, I recently decided to build my own Ubuntu 16.04LTS based router **from scratch**.
 
 ## Bill of Material
 
