@@ -8,7 +8,7 @@ This post is the third part of the series "Build your homemade router": the [pre
 
 According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is fully 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to the 5Ghz channels.
 
-Let's ask the system about it:
+Let's ask the system about the supported frequencies:
 
 ```
 $ iw list
@@ -90,9 +90,9 @@ $ iw list
        ...
 ```
 
-From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but what's that `no IR` flag? 
+From the (curated) output above, we can see that the chipset supports channels 1 to 14 (2.4Ghz) and channels 36 to 165 (5Ghz) - but did you noticed the `no IR` flag? 
 
-The `no IR` flag stands for _no-initiating-radiation_ and that means **you cannot use that mode of operation if that require you to initiate radiation first**, and that includes **beacons** (of course). In other words: **you cannot run an access-point on those channels!**
+The `no IR` flag stands for _no-initiating-radiation_ (a.k.a _passive scan_) and that means **you cannot use that mode of operation if that require you to initiate radiation first**, and that includes **beacons** (of course). In other words: **you cannot run an access-point on those channels!**
 
 ![](http://gph.to/20LFaSu){: .center-image }
 
@@ -101,7 +101,7 @@ The `no IR` flag stands for _no-initiating-radiation_ and that means **you canno
 
 The above situation is because of the [Linux regulatory compliance](https://wireless.wiki.kernel.org/en/developers/regulatory/statement), which regulates usage of the radio spectrum [depending on a territory basis](https://en.wikipedia.org/wiki/List_of_WLAN_channels).
 
-But, wait! I'm living in the US and according to the FCC, I should be able to emit on channels 36-48, so what's wrong? Let's take a look at the regulatory domain currently in use:
+But, wait! I'm living in the US and according to the link above, I should be able to emit on channels 36-48, so what's wrong? Let's take a look at the regulatory domain currently in use:
 
 ```shell
 $ iw reg get
@@ -118,7 +118,7 @@ country 00: DFS-UNSET
 
 The output above tell us that the current regulatory domain in use is [_worldwide_](http://linuxwireless.org/en/users/Drivers/ath/#EEPROM_world_regulatory_domain) (or unset), that mean it is currently using minimum values allowed in every country.
 
-Unfortunately, trying to manually set the regulatory domain through `sudo iw reg set US` won't work because the card has been shipped with the [_world regulatory domain_](https://wireless.wiki.kernel.org/en/users/drivers/ath#eeprom_world_regulatory_domain) burned into EEPROM, and all Atheros custom world regulatory domains have all 5 GHz channels marked with a passive scan flags:
+Unfortunately, trying to manually set the regulatory domain through `sudo iw reg set US` won't work in our case because the card has been shipped with the [_world regulatory domain_](https://wireless.wiki.kernel.org/en/users/drivers/ath#eeprom_world_regulatory_domain) burned into EEPROM (and all Atheros custom world regulatory domains have all 5 GHz channels marked with a passive scan flags):
 
 ```shell
 $ dmesg | grep EEPROM
