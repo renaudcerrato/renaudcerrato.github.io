@@ -226,4 +226,4 @@ iface br0 inet static
 ```
 
 
-The [next part](/2016/05/30/build-your-homemade-router-part3/) will enable 802.11ac (5Ghz)!
+During the [next part](/2016/05/30/build-your-homemade-router-part3/), we will enable 802.11ac (5Ghz).
