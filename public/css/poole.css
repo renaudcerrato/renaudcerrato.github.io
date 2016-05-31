@@ -377,6 +377,11 @@ tbody tr:nth-child(odd) th {
   color: inherit;
 }
 
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
 
 /*
  * Pagination
