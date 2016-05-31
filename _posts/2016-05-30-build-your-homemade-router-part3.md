@@ -320,4 +320,5 @@ rsn_pairwise=CCMP
 wpa_passphrase=YouCantGuess
 ```
 
+
 > You’ll find the documentation of every available options into the [/usr/share/doc/hostapd/examples/](https://gist.github.com/renaudcerrato/db053d96991aba152cc17d71e7e0f63c) directory.
