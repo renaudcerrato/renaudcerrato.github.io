@@ -106,7 +106,7 @@ $ sudo apt-get install firehol
 
 Thanks to `firehol`, our routing configuration could be as simple as:
 
-{% highlight shell linenos %}
+```shell
 $ cat /etc/firehol/firehol.conf 
 version 6
 
@@ -123,7 +123,7 @@ interface br0 lan
 router lan2wan inface br0 outface enp1s0
         masquerade
         route all accept
-{% endhighlight %}
+```
 
 You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting a laptop to the available NIC port: **you should now be able to browse the internet.**
 
