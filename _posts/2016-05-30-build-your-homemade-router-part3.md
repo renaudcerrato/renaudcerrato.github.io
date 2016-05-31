@@ -4,7 +4,7 @@ layout: post
 title: Build your homemade router (part 3)
 ---
 
-This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration of a very basic 802.11n/2.4Ghz access point, that part will enable 802.11ac.
+This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration of a minimal 802.11n (2.4Ghz) access point, that part will finally enable 802.11ac.
 
 According to the documentation of the [Airetos AEX-QCA9880-NX](http://www.airetos.com/products/aex-qca9880-nx/), the chipset is fully 802.11ac capable and we should now be able to move from the (crowded) 2.4Ghz to the 5Ghz channels.
 
