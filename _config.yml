@@ -17,8 +17,8 @@ author:
 
 paginate:         5
 
-gems:
-  - jekyll-sitemap
+#gems:
+#  - jekyll-sitemap
 #  - jekyll-seo-tag
   
 # Custom vars
