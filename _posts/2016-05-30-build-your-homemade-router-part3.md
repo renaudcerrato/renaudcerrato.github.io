@@ -129,7 +129,7 @@ $ dmesg | grep EEPROM
 
 ## Patch it!
 
-Fortunately, the regulatory compliance is dealed at the driver level (which is open-source) and can be easily patched. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
+Fortunately, the regulatory compliance is dealed at the driver level and can be easily patched. The original patch can be found in the [Open-WRT source tree](https://dev.openwrt.org/browser/trunk/package/kernel/mac80211/patches/402-ath_regd_optional.patch).
 
 First of all, be sure to enable the source repository from _/etc/apt/sources.list_:
 
@@ -280,7 +280,7 @@ $ iw list
 ...
 ```
 
-Here's our final _hostapd.conf_:
+According to the output above, **here's our final _hostapd.conf_**:
 
 ```shell
 $ cat /etc/hostapd/hostapd.conf
