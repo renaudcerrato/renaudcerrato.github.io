@@ -6,7 +6,7 @@ layout: post
 
 This post is the second part of the series "Build your homemade router". The [first part](https://renaudcerrato.github.io/2016/05/21/build-your-homemade-router-part1/) covered the material installation.
 
-That second part will cover the configuration of your freshly installed machine and, before going further, we'll need to draw what we want to achieve. Let's see what are the name of the every interface:
+That second part will cover the configuration of your freshly installed hardware and, before going further, we'll need to draw what we want to achieve. Let's see what are the name of the interfaces:
 
 ```shell
 $ ifconfig
@@ -127,7 +127,7 @@ router lan2wan inface br0 outface enp1s0
 
 You can test the above setup by starting `firehol` manually (`sudo firehol start`) and by connecting a laptop to the available NIC port: **you should now be able to browse the internet.**
 
-As a last point, **do not forget** to edit `/etc/default/firehol` to enable autostart:
+As a last point, **do not forget** to edit `/etc/default/firehol` to start FireHol at startup:
 
 ```shell
 $ cat /etc/default/firehold
@@ -154,7 +154,7 @@ $ sudo nmcli radio wifi off && sudo rfkill unblock wlp5s0
 $ sudo apt-get remove network-manager
 ```
 
-You'll find below a curated (but working) 802.11n/2.4Ghz/WPA2-AES configuration file:
+You'll find below a minimal (but working) 802.11n/2.4Ghz/WPA2-AES configuration file:
 
 ```shell
 $ cat /etc/hostapd/hostapd-test.conf 
@@ -164,7 +164,7 @@ bridge=br0
 driver=nl80211
 
 ##### IEEE 802.11 related configuration #####
-ssid=MyRouter
+ssid=iCanHearYouHavingSex
 hw_mode=g
 channel=1
 auth_algs=1
@@ -186,7 +186,7 @@ You can easily test the configuration above by running the following command:
 $ sudo hostapd /etc/hostapd/hostapd-test.conf
 ```
 
-> You'll find the [documentation](http://w1.fi/gitweb/gitweb.cgi?p=hostap.git;a=blob_plain;f=hostapd/hostapd.conf) of every available options into the `/usr/share/doc/hostapd/examples/` directory. 
+> You'll find the [documentation](https://gist.github.com/renaudcerrato/db053d96991aba152cc17d71e7e0f63c) of every available options into the `/usr/share/doc/hostapd/examples/` directory. 
 
 If everything goes well, **you should now be able to connect wirelessly**! 
 
