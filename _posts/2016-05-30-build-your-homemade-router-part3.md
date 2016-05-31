@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Build your homemade router (part 3)
 ---
