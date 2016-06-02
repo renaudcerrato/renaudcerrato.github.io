@@ -190,7 +190,7 @@ $ sudo hostapd /etc/hostapd/hostapd-test.conf
 
 If everything goes well, **you should now be able to connect wirelessly**! 
 
-However, **do not forget** to edit the interface configuration to start `hostapd` right before the interface goes up as seen below.
+However, **do not forget** to edit the interface configuration to start `hostapd` right after the interface goes up as seen below.
 
 **Here's our final `/etc/network/interfaces`**:
 
@@ -212,7 +212,7 @@ iface br0 inet static
     netmask 255.255.255.0
     broadcast 192.168.1.255 
     bridge_ports enp2s0 wlp5s0
-    pre-up /usr/sbin/hostapd \
+    post-up /usr/sbin/hostapd \
               -P /var/run/hostapd-br0.pid \
               -B /etc/hostapd/hostapd-test.conf
     post-up /usr/sbin/dnsmasq \
