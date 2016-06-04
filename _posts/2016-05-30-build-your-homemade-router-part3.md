@@ -267,16 +267,14 @@ $ iw list
                         DSSS/CCK HT40
 ...
         Band 2:
-                Capabilities: 0x19e3
+                VHT Capabilities (0x338001b2):
+                        Max MPDU length: 11454
+                        Supported Channel Width: neither 160 nor 80+80
                         RX LDPC
-                        HT20/HT40
-                        Static SM Power Save
-                        RX HT20 SGI
-                        RX HT40 SGI
+                        short GI (80 MHz)
                         TX STBC
-                        RX STBC 1-stream
-                        Max AMSDU length: 7935 bytes
-                        DSSS/CCK HT40
+                        RX antenna pattern consistency
+                        TX antenna pattern consistency
 ...
 ```
 
