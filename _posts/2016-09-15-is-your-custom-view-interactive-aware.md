@@ -42,7 +42,7 @@ By taking advantage of all of the above, you're now able to determine if your vi
 
 ## Ok, got it, and?
 
-If your custom view is doing heavy things (like a loop animation for a loading spinner), relies on Android sensors (like a compass, or our own [DoorSignView](https://www.github.com/renaudcerrato/DoorSignView), or anything else required to be re-drawn periodically (like a [RelativeTimeTextView](https://github.com/curioustechizen/android-ago/blob/master/android-ago/src/com/github/curioustechizen/ago/RelativeTimeTextView.java)) then you ~~can~~ must take advantage of the signals above to save battery when your view is'nt interactive yet/anymore.
+If your custom view is doing heavy things (like a loop animation for a loading spinner), relies on Android sensors (like a compass, or a [DoorSignView](https://www.github.com/renaudcerrato/DoorSignView)), or anything else required to be re-drawn periodically (like a [RelativeTimeTextView](https://github.com/curioustechizen/android-ago/blob/master/android-ago/src/com/github/curioustechizen/ago/RelativeTimeTextView.java)) then you ~~can~~ must take advantage of the signals above to save battery when your view is'nt interactive yet/anymore.
 
 ![](/static/img/spinner.gif){: .center-image }
 
@@ -61,7 +61,7 @@ To use it, just delegate the callbacks cited above, and implements `InteractiveV
 public class NastyCustomView extends View implements InteractiveViewHelper.Callback {
 
 	private final InteractiveViewHelper mInteractiveViewHelper = 
-    									new InteractiveViewHelper(this, this);
+		new InteractiveViewHelper(this, this);
 
 	...
     
