@@ -37,9 +37,9 @@ Example: video2gif.sh -r24 -w320 -f3 video.mp4
 
 The `-r` switch will set the desired framerate while the `-w` switch will set the output width in pixels. From my own experience, a framerate between 12fps and 18fps will fit most cases. The `-d` and `-r` switches may shrink the resulting size further by adding some color dithering/fuzzing. 
 
-You'll find below some outputs with varying dithering/fuzzing, at a fixed framerate of 15fps:
+You'll find below some outputs with varying dithering/fuzzing settings, at a fixed framerate of 15fps:
 
-![](/static/img/screen.gif) ![](/static/img/screend5f1.gif) ![](/static/img/screend16f8.gif)
+![](/static/img/screen.gif)![](/static/img/screend5f1.gif)![](/static/img/screend16f8.gif)
 
 
-**Enjoy.**
+**Enjoy!**
