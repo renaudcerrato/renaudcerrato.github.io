@@ -51,11 +51,7 @@ If your custom view is doing heavy things (like a loop animation for a loading s
 
 ## Great! I'm in!
 
-You're in luck, I wrote a [small helper](https://gist.github.com/renaudcerrato/746e039700ac5eeaaea40808666e239f) which will handle everything for you - including registering to `ACTION_SCREEN_ON`/`ACTION_SCREEN_OFF` broadcasts:
-
-{% gist 746e039700ac5eeaaea40808666e239f %}
-
-To use it, just delegate the callbacks cited above, and implements `InteractiveViewHelper.Callback` to be notified:
+You're in luck, I wrote a [small helper](https://gist.github.com/renaudcerrato/746e039700ac5eeaaea40808666e239f) which will handle everything for you - including registering to `ACTION_SCREEN_ON`/`ACTION_SCREEN_OFF` broadcasts. Using it is fairly simple, just delegate the callbacks cited above, and implements `InteractiveViewHelper.Callback` to be notified:
 
 ```java
 public class NastyCustomView extends View implements InteractiveViewHelper.Callback {
@@ -97,6 +93,11 @@ public class NastyCustomView extends View implements InteractiveViewHelper.Callb
     ...
 }
 ```
+
+You'll find below the gist of my `InteractiveViewHelper`, no excuse anymore!
+
+{% gist 746e039700ac5eeaaea40808666e239f %}
+
 
 
 
