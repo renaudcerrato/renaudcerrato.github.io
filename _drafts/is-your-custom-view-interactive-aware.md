@@ -11,7 +11,7 @@ A [view](https://developer.android.com/reference/android/view/View.html) can be 
 
 *  [`void View::onVisibilityChanged(View, int)`](https://developer.android.com/reference/android/view/View.html#onVisibilityChanged%28android.view.View, int%29)
 
- This is called when the visibility of the view or an ancestor of the view has changed (between GONE, INVISIBLE, and VISIBLE).
+ This is called when the visibility of the view (or an ancestor) of the view has changed (between GONE, INVISIBLE, and VISIBLE).
  
 * [`void View::onWindowVisibilityChanged()`](https://developer.android.com/reference/android/view/View.html#onWindowVisibilityChanged%28int%29)
 
@@ -39,6 +39,25 @@ The callbacks above will let you know if your view is ready to be drawn and/or v
 By taking advantage of all of the above, you're now able to determine if your view is interactive.
 
 
-## Ok, got it, and now?
+## Ok, got it, and?
+
+If your custom view is doing heavy things (like a loop animation for a loading spinner), relies on Android sensors (like a compass, or our own [DoorSignView](https://www.github.com/renaudcerrato/DoorSignView), or anything else required to be re-drawn periodically (like a [RelativeTimeTextView](https://github.com/curioustechizen/android-ago/blob/master/android-ago/src/com/github/curioustechizen/ago/RelativeTimeTextView.java)) then you ~~can~~ must take advantage of the signals above to save battery when your view is'nt interactive yet (or anymore).
+
+![](/static/img/doorsign.gif) ![](/static/img/spinner.gif)
+
+## Great! I'm in!
+
+You're in luck, I wrote a small helper which will handle eveything for you:
+
+<script src="https://gist.github.com/renaudcerrato/746e039700ac5eeaaea40808666e239f.js"></script>
+
+
+
+
+
+
+
+
+
 
 
