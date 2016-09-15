@@ -39,7 +39,12 @@ The `-r` switch will set the desired framerate while the `-w` switch will set th
 
 You'll find below some outputs with varying dithering/fuzzing settings, at a fixed framerate of 15fps:
 
-![](/static/img/screen.gif)![](/static/img/screend5f1.gif)![](/static/img/screend16f8.gif)
-
+<table>
+<tr>
+<td>![](/static/img/screen.gif)</td>
+<td>![](/static/img/screend5f1.gif)</td>
+<td>![](/static/img/screend16f8.gif)</td>
+</tr>
+</table>
 
 **Enjoy!**
