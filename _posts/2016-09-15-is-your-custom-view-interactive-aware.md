@@ -42,7 +42,7 @@ By taking advantage of all of the above, you're now able to determine if your vi
 
 ## Ok, got it, and?
 
-If your custom view is doing heavy things (like a loop animation for a loading spinner), relies on Android sensors (like a compass, or our own [DoorSignView](https://www.github.com/renaudcerrato/DoorSignView), or anything else required to be re-drawn periodically (like a [RelativeTimeTextView](https://github.com/curioustechizen/android-ago/blob/master/android-ago/src/com/github/curioustechizen/ago/RelativeTimeTextView.java)) then you ~~can~~ must take advantage of the signals above to save battery when your view is'nt interactive yet (or anymore).
+If your custom view is doing heavy things (like a loop animation for a loading spinner), relies on Android sensors (like a compass, or our own [DoorSignView](https://www.github.com/renaudcerrato/DoorSignView), or anything else required to be re-drawn periodically (like a [RelativeTimeTextView](https://github.com/curioustechizen/android-ago/blob/master/android-ago/src/com/github/curioustechizen/ago/RelativeTimeTextView.java)) then you ~~can~~ must take advantage of the signals above to save battery when your view is'nt interactive yet/anymore.
 
 ![](/static/img/spinner.gif){: .center-image }
 
@@ -51,16 +51,17 @@ If your custom view is doing heavy things (like a loop animation for a loading s
 
 ## Great! I'm in!
 
-You're in luck, I wrote a [small helper](https://gist.github.com/renaudcerrato/746e039700ac5eeaaea40808666e239f) which will handle everything for you:
+You're in luck, I wrote a [small helper](https://gist.github.com/renaudcerrato/746e039700ac5eeaaea40808666e239f) which will handle everything for you - including registering to `ACTION_SCREEN_ON`/`ACTION_SCREEN_OFF` broadcasts:
 
 {% gist 746e039700ac5eeaaea40808666e239f %}
 
-To use it, just delegate the callbacks cited above, and implements `InteractiveViewHelper.Callback`:
+To use it, just delegate the callbacks cited above, and implements `InteractiveViewHelper.Callback` to be notified:
 
 ```java
-class NastyCustomView extends View implements InteractiveViewHelper.Callback {
+public class NastyCustomView extends View implements InteractiveViewHelper.Callback {
 
-private final InteractiveViewHelper mInteractiveViewHelper = new InteractiveViewHelper(this, this);
+	private final InteractiveViewHelper mInteractiveViewHelper = 
+    									new InteractiveViewHelper(this, this);
 
 	...
     
