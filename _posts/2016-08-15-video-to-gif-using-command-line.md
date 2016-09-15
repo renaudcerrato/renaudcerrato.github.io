@@ -1,7 +1,5 @@
 ---
-published: true
-layout: post
-title: [Script] Convert video to GIF
+published: false
 ---
 If, like me, you're crawling GitHub for the latest awesome UI libraries - you know how frustrating it is when the author _"forgot"_ to insert a visual representation of its valuable work. [Some](https://github.com/evelyne24/ClockDrawableAnimation) are kind enough to insert a screenshot but are relying on a Youtube link - which add a lot of friction.
 
@@ -43,7 +41,3 @@ You'll find below some outputs with varying dithering/fuzzing, at a fixed framer
 
 
 **Enjoy.**
-
-
-
-
