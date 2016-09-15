@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Is your custom view interactive aware?
 ---
