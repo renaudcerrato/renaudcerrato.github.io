@@ -2,6 +2,7 @@
 published: true
 title: Build your homemade router (part 2)
 layout: post
+tags: linux hardware
 ---
 
 This post is the second part of the series "Build your homemade router". The [first part](https://renaudcerrato.github.io/2016/05/21/build-your-homemade-router-part1/) covered the material installation, that second part will cover the configuration of your freshly installed hardware.
