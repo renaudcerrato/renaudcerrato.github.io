@@ -4,9 +4,13 @@
   {% if page.series %}
   
     {% assign count = 0 %}
+    {% assign idx = 0 %}
     {% for post in site.posts reversed %}
       {% if post.series == page.series %}
         {% assign count = count | plus: '1' %}
+        {% if post.id == page.id %}
+        {% assign idx = forloop.index0 %}
+        {% endif %}
       {% endif %}
     {% endfor %}
     
