@@ -13,9 +13,11 @@ layout: default
   <h2>Related Posts</h2>
   <ul class="related-posts">
     {% assign related = page.id %}
-    {% assign max_count = 3 %}
-    {% assign count = 1 %}
+    {% assign count = 0 %}
     {% for tag in page.tags %}
+      {% if count == 3 %}
+        {% break %}
+      {% endif %}
       {% for post in site.tags[tag] %}
         {% if related contains post.id %}
         {% else %}
@@ -28,6 +30,7 @@ layout: default
             </h3>
           </li>
           {% assign related = related | append:post.id %}
+          {% assign count = count | plus:'1' %}
         {% endif %}
       {% endfor %}
     {% endfor %}
