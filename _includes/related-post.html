@@ -9,6 +9,7 @@
     {% endfor %}
     
     {% if count > 0 %}
+      <h2>From the same serie:</h2>
       <ul class="related-posts">
         {% for post in site.posts reversed %}
           {% if post.series == page.series %}
