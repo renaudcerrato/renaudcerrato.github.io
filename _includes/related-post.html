@@ -20,7 +20,7 @@
                   {% if post.id == page.id %}
                     {{ post.title }}<small>{{ post.date | date_to_string }}</small>
                   {% else %}
-                    <a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a>
+                    <a href="{{ post.url }}">{{ post.title }} <small>{{ post.date | date_to_string }}</small></a>
                   {% endif %}
                 </h3>
               </li>
@@ -41,7 +41,7 @@
         {% else %}
           <li>
             <h3>
-              <a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a>
+              <a href="{{ post.url }}">{{ post.title }} <small>{{ post.date | date_to_string }}</small></a>
             </h3>
           </li>
           {% assign related = related | append:post.id %}
