@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Build your homemade router (part 3)
-tags: linux,hardware
+tags: linux hardware
 ---
 
 This post is the third part of the series "Build your homemade router": the [previous part](/2016/05/23/build-your-homemade-router-part2/) covered the system configuration of a minimal 802.11n (2.4Ghz) access point, that part will finally enable 802.11ac.
