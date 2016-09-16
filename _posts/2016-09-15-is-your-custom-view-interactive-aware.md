@@ -92,7 +92,7 @@ public class NastyCustomView extends View implements InteractiveViewHelper.Callb
     
     ...
 }
-{ endhighlight }
+{% endhighlight %}
 
 **Now, you know.**
 
