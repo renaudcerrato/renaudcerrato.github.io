@@ -2,15 +2,7 @@
   {% if page.series %}
   
     {% assign count = 0 %}
-    {% assign idx = 0 %}
-    {% for post in site.posts reversed %}
-      {% if post.series == page.series %}
-        {% capture count %}{{ count | plus: '1' }}{% endcapture %}
-        {% if post.id == page.id %}
-          {% capture idx %}{{count}}{% endcapture %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
+   
     
     {% if count > 0 %}
       <ul class="related-posts">
