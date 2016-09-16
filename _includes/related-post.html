@@ -12,8 +12,22 @@
       {% endif %}
     {% endfor %}
     
-    
-    
+    {% if count > 0 %}
+      <ul class="related-posts">
+        {% for post in site.posts reversed %}
+          {% if post.series == page.series %}
+            <li>
+              <h3>
+                <a href="{{ post.url }}">
+                  {{ post.title }}
+                  <small>{{ post.date | date_to_string }}</small>
+                </a>
+              </h3>
+            </li>
+        	{% endif %}
+      	{% endfor %}
+      </ul>
+    {% endif %}
     
   {% endif %}
   
