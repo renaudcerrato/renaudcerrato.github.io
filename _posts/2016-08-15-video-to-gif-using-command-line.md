@@ -41,9 +41,9 @@ You'll find below some outputs with varying dithering/fuzzing settings, at a fix
 
 <table>
 <tr>
-<td><img src="/public/images/screen.gif"/></td>
-<td><img src="/public/images/screend5f1.gif"/></td>
-<td><img src="/public/images/screend16f8.gif"/></td>
+<td><img src="//images/screen.gif"/></td>
+<td><img src="//images/screend5f1.gif"/></td>
+<td><img src="//images/screend16f8.gif"/></td>
 </tr>
 </table>
 

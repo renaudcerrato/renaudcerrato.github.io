@@ -37,7 +37,7 @@ Supported interface modes:
 From the informations above, we can draw our diagram: the first NIC will serve as our WAN port, while the second one will be bridged to our wireless network:
 
 
-![](/public/images/network-diagram.jpg){: .center-image }
+![](//images/network-diagram.jpg){: .center-image }
 
 
 
