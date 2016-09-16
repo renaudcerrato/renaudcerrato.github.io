@@ -12,12 +12,13 @@ layout: default
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    {% assign related = "" %}
+    {% assign related = page.id %}
     {% assign max_count = 3 %}
     {% assign count = 1 %}
     {% for tag in page.tags %}
       {% for post in site.tags[tag] %}
-        {% if post.id != page.id %}
+        {% if related contains post.id %}
+        {% else %}
           <li>
             <h3>
               <a href="{{ post.url }}">
@@ -26,7 +27,8 @@ layout: default
               </a>
             </h3>
           </li>
-        {% endof %}
+          {% assign related = related | append:post.id %}
+        {% endif %}
       {% endfor %}
     {% endfor %}
   </ul>
