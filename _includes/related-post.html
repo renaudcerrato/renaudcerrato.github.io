@@ -1,41 +1,36 @@
 <div class="related">
-  {% assign related = page.id %}
-  
-  {% if page.series %}
-  
-    {% assign count = 0 %}
-    {% assign idx = 0 %}
-    {% for post in site.posts reversed %}
-      {% if post.series == page.series %}
-        {% assign count = count | plus: '1' %}
-        {% if post.id == page.id %}
-        {% assign idx = forloop.index0 %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-    
-    {% if count > 0 %}
-      <h2>From the same serie:</h2>
-      <ul class="related-posts">
-        {% for post in site.posts reversed %}
-          {% if post.series == page.series %}
-            <li>
-              <h3>
-                <a href="{{ post.url }}">
-                  {{ post.title }}
-                  <small>{{ post.date | date_to_string }}</small>
-                </a>
-              </h3>
-            </li>
-            {% assign related = related | append:post.id %}
-        	{% endif %}
-      	{% endfor %}
-      </ul>
-    {% endif %}
-    
-  {% endif %}
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    {% assign related = page.id %}
+    
+    {% if page.series %}
+    
+      {% assign count = 0 %}
+      {% for post in site.posts reversed %}
+        {% if post.series == page.series %}
+          {% assign count = count | plus: '1' %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if count > 0 %}
+          {% for post in site.posts reversed %}
+            {% if post.series == page.series %}
+              <li>
+                <h3>
+                  {% if post.id == page.id %}
+                    {{ post.title }}<small>{{ post.date | date_to_string }}</small>
+                  {% else %}
+                    <a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a>
+                  {% endif %}
+                </h3>
+              </li>
+              {% assign related = related | append:post.id %}
+          	{% endif %}
+        	{% endfor %}
+      {% endif %}
+      
+    {% endif %}
+    
     {% assign count = 0 %}
     {% for tag in page.tags %}
       {% if count == 3 %}
@@ -46,10 +41,7 @@
         {% else %}
           <li>
             <h3>
-              <a href="{{ post.url }}">
-                {{ post.title }}
-                <small>{{ post.date | date_to_string }}</small>
-              </a>
+              <a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a>
             </h3>
           </li>
           {% assign related = related | append:post.id %}
