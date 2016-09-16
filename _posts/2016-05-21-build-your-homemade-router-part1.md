@@ -2,7 +2,7 @@
 published: true
 title: Build your homemade router (part 1)
 layout: post
-tags: linux hardware
+tags: linux,hardware
 ---
 I've spent the last decade flashing my home routers to DD-WRT but while this is still a lot better than using stock firmwares, I was never really satisfied about it because of the cheap (and poorly supported) hardware, unstable builds, and/or unfixed bugs. Not even talking of [the controversy](http://www.wi-fiplanet.com/columns/article.php/3816236/The-DD-WRT-Controversy.htm) about it.  
 
