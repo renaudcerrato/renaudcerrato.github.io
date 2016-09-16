@@ -26,3 +26,6 @@ version:          2.1.0
 
 github:
   repo:           https://www.github.com/renaudcerrato
+
+analytics:
+  google:         'UA-84293519-1'
