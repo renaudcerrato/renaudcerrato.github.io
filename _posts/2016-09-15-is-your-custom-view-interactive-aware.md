@@ -53,7 +53,7 @@ If your custom view is doing heavy things (like a loop animation for a loading s
 
 You're in luck, I wrote a [small helper](https://gist.github.com/renaudcerrato/746e039700ac5eeaaea40808666e239f) which will handle everything for you - including registering to `ACTION_SCREEN_ON`/`ACTION_SCREEN_OFF` broadcasts. Using it is fairly simple, just delegate the methods cited above, and implements `InteractiveViewHelper.Callback` to be notified:
 
-```java
+{% highlight java linenos %}
 public class NastyCustomView extends View implements InteractiveViewHelper.Callback {
 
 	private final InteractiveViewHelper mInteractiveViewHelper = 
@@ -92,7 +92,7 @@ public class NastyCustomView extends View implements InteractiveViewHelper.Callb
     
     ...
 }
-```
+{ endhighlight }
 
 **Now, you know.**
 
