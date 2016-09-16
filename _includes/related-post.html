@@ -1,4 +1,6 @@
 <div class="related">
+  {% assign related = page.id %}
+  
   {% if page.series %}
   
     {% assign count = 0 %}
@@ -21,16 +23,15 @@
                 </a>
               </h3>
             </li>
+            {% assign related = related | append:post.id %}
         	{% endif %}
       	{% endfor %}
       </ul>
     {% endif %}
     
   {% endif %}
-  
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    {% assign related = page.id %}
     {% assign count = 0 %}
     {% for tag in page.tags %}
       {% if count == 3 %}
