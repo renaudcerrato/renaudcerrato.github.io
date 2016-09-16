@@ -1,10 +1,10 @@
 <div class="related">
-  {% if page.series != nil %}
+  {% if page.series %}
   
     {% assign count = 0 %}
     {% assign idx = 0 %}
     {% for post in site.posts reversed %}
-    	{% if post.series == series %}
+    	{% if post.series == page.series %}
     		{% capture count %}{{ count | plus: '1' }}{% endcapture %}
     		{% if post.id == page.id %}
     			{% capture idx %}{{count}}{% endcapture %}
@@ -15,15 +15,15 @@
     {% if count > 0 %}
       <ul class="related-posts">
       	{% for post in site.posts reversed %}
-        	{% if post.series == series %}
-        		<li>
-                <h3>
-                  <a href="{{ post.url }}">
-                    {{ post.title }}
-                    <small>{{ post.date | date_to_string }}</small>
-                  </a>
-                </h3>
-              </li>
+        	{% if post.series == page.series %}
+            <li>
+              <h3>
+                <a href="{{ post.url }}">
+                  {{ post.title }}
+                  <small>{{ post.date | date_to_string }}</small>
+                </a>
+              </h3>
+            </li>
         	{% endif %}
       	{% endfor %}
     	</ul>
