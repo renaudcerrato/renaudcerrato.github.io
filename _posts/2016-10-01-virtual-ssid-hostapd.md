@@ -61,9 +61,9 @@ $ ethtool -P wlp5s0
 Permanent address: 44:c3:06:00:03:eb
 ```
 
-According to the output the above, by clearing the four least significant bits, and also setting [the U/L bit](https://en.wikipedia.org/wiki/MAC_address#Universal_vs._local) for sanity, our new MAC address would be `46:c3:06:00:03:e0`.
+According to the output above, by clearing the four least significant bits and also setting [the U/L bit](https://en.wikipedia.org/wiki/MAC_address#Universal_vs._local) for sanity, our new MAC address would be `46:c3:06:00:03:e0`.
 
-Now, let's update our network interface configuration to update our MAC address right before the interface is brought up, and also declare our virtual interface according to our diagram:
+Now, let's update our network interface configuration to change our MAC address right before the interface is brought up, and also declare our virtual interface according to our diagram:
 
 ```shell
 $ cat /etc/network/interfaces
