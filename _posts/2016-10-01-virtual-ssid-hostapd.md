@@ -58,7 +58,7 @@ In order to fullfill the requirements above and let `hostapd` automatically assi
 First, Let's determine our current MAC address:
 
 ```shell
-$ sudo $ ethtool -P wlp5s0
+$ ethtool -P wlp5s0
 Permanent address: 44:c3:06:00:03:eb
 ```
 
