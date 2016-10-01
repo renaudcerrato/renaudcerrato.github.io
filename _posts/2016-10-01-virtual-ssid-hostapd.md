@@ -12,7 +12,7 @@ First of all, this post is assuming you already setup your wireless card as an a
 
 ## Diagram
 
-Based on [my previous setup]({% post_url 2016-05-23-build-your-homemade-router-part2 %}), we can draw a diagram of what we want to achieve. `wlp5s0` is our physical wireless interface, and our virtual SSID will run on a virtual `wlan0` interface, on its own `192.168.2.0/24` sub-network:
+Based on [my current setup]({% post_url 2016-05-23-build-your-homemade-router-part2 %}), I can draw a diagram of what we want to achieve. `wlp5s0` is our physical wireless interface, and our virtual SSID will run on a virtual `wlan0` interface on its own `192.168.2.0/24` sub-network:
 
 ![](/images/router-dual-ssid.png){: .center-image }
 
