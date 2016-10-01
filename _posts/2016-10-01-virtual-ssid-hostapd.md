@@ -29,14 +29,14 @@ $ iw list
 	...
 ```
 
-From the output above, we see that the chipset supports up to 8 AP **on a single channel**. That mean our virtual SSIDs will run on the same wireless channel as the _real_ one.
+From the output above, we see that the chipset supports up to 8 AP **on a single channel**. That mean we can setup up to 7 virtual SSIDs, and they will run on the same wireless channel as the _main_ one.
 
-## Network interface configuration
+## Network interfaces configuration
 
 According to the documentation found in `hostapd.conf`, there's a strong requirement between the MAC address of the physical interface, and the BSSID of the virtual interface(s):
 
 ```shell
-hostapd will generate BSSID mask based on the BSSIDs that are
+hostapd will generate a BSSID mask based on the BSSIDs that are
 configured. hostapd will verify that dev_addr & MASK == dev_addr. If this is
 not the case, the MAC address of the radio must be changed before starting
 hostapd. If a BSSID is configured for
