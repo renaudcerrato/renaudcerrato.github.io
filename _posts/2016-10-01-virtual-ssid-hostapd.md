@@ -30,7 +30,7 @@ $ iw list
 	...
 ```
 
-From the output above, we see that the chipset supports up to 8 virtual SSIDs - **on a single channel**. That mean our virtual SSID will run on the same wireless channel as the _real_ one.
+From the output above, we see that the chipset supports up to 8 AP **on a single channel**. That mean our virtual SSIDs will run on the same wireless channel as the _real_ one.
 
 ## Network interface configuration
 
@@ -91,9 +91,38 @@ iface wlan0 inet static
 ...
 ```
 
-As we may see above, I'm using `dnsmasq` for our DHCP and DNS needs - feel free to use your prefered weapons. Please note that the `allow-hotplug` above is highly recommended.
+That's all. As we may see above, I'm using `dnsmasq` for our DHCP and DNS needs - feel free to use your prefered weapons. Please note that `allow-hotplug` is required on our virtual interface to properly work.
 
+## Access point configuration
 
+Now, the easiest part: we'll add a virtual SSID to our current `hostapd` configuration. Simply append, **at the bottom** of your existing `hostapd.conf`, the desired configuration:
 
+```shell
+$ cat /etc/hostapd/hostapd.conf
+...
+### Virtual SSID(s) ###
+bss=wlan0
+ssid=MyVirtualSSID
+wpa=2
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+wpa_passphrase=you_cant_guess
+```
 
+In the example above, I used WPA2 but most of the options are available (apart from radio interface specific items, like channel). We could add more virtual SSID by simply appending more configurations - according we declared and configured more virtual interface.
 
+Now, simply reboot, and you should be able to see your new SSID, along with your new wireless interface (notice the MAC address):
+
+```shell
+$ ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 46:c3:06:00:03:e1  
+          inet addr:192.168.2.1  Bcast:192.168.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::c3:6ff:fe00:3e1/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:557512 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:852606 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:73841867 (73.8 MB)  TX bytes:1015056727 (1.0 GB)
+```
+
+**That's all folks!**
