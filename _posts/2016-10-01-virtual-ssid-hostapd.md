@@ -1,6 +1,6 @@
 ---
 published: true
-title: Virtual SSID setup with hostapd
+title: Setup a virtual SSID with hostapd
 layout: post
 tags: linux hardware
 series: homemade-router
@@ -68,7 +68,7 @@ Now, let's update our network interface configuration to change our MAC address 
 ```shell
 $ cat /etc/network/interfaces
 ...
-# Physical Wireless
+# Physical Wireless (bridged)
 auto wlp5s0
 iface wlp5s0 inet manual
     pre-up ifconfig wlp5s0 hw ether 46:c3:06:00:03:e0
