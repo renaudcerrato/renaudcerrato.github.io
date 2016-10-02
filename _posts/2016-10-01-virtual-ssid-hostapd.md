@@ -1,11 +1,11 @@
 ---
 published: true
-title: Setup a virtual SSID with hostapd
+title: Setup multiple SSID with hostapd
 layout: post
 tags: linux hardware
 series: homemade-router
 ---
-Wether you're willing to setup a guest access-point, or a dedicated wireless network for your VPN needs - you'll have to setup a virtual SSID at some point. This post will walk you through the required steps to achieve your goal using [hostapd](https://wiki.gentoo.org/wiki/Hostapd). 
+Wether you're willing to setup a guest access-point, or a dedicated wireless network for your VPN needs - you'll have to setup a virtual SSID at some point. This post will walk you through the required steps to achieve it using [hostapd](https://wiki.gentoo.org/wiki/Hostapd). 
 
 First of all, this post is assuming you already setup your wireless card as an access-point. If this is not the case, head up to [my previous post]({% post_url 2016-05-23-build-your-homemade-router-part2 %}).
 
@@ -18,7 +18,7 @@ Based on [my current setup]({% post_url 2016-05-23-build-your-homemade-router-pa
 
 ## Preliminary 
 
-First of all, let's check that our wireless card supports virtual SSIDs:
+First of all, let's check that the wireless card supports multiple SSIDs:
 
 ```shell
 $ iw list
@@ -61,7 +61,7 @@ $ ethtool -P wlp5s0
 Permanent address: 44:c3:06:00:03:eb
 ```
 
-According to the output above, by clearing the four least significant bits and also setting [the U/L bit](https://en.wikipedia.org/wiki/MAC_address#Universal_vs._local) for sanity, our new MAC address would be `46:c3:06:00:03:e0`.
+According to the output above, by clearing the four least significant bits and also setting [the U/L bit](https://en.wikipedia.org/wiki/MAC_address#Universal_vs._local) (for sanity), our new MAC address would be `46:c3:06:00:03:e0`.
 
 Now, let's update our network interface configuration to change our MAC address right before the interface is brought up, and also declare our virtual interface according to our diagram:
 
@@ -108,7 +108,7 @@ rsn_pairwise=CCMP
 wpa_passphrase=you_cant_guess
 ```
 
-In the example above, I used WPA2 but most of the options are available (apart from radio interface specific items, like channel). We could add more virtual SSID by simply appending more configurations - according we declared and configured more virtual interface.
+In the example above, I used a WPA2 encryption but most of the options are available (apart from radio interface specific items, like channel). We could add more virtual SSIDs by simply appending more configurations - according we declared and configured more virtual interface.
 
 Now, simply reboot, and you should be able to see your new SSID, along with your new wireless interface (notice the MAC address):
 
