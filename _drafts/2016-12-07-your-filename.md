@@ -5,8 +5,9 @@ published: false
 
 - versioning
 - put kind/version on your models
-- beware ofenums!
+- beware of enums!
 - cache control
 -- client side: public/private (users/me pattern)
-- use cursors!
+- use cursors
+-- easier iterators!
 
