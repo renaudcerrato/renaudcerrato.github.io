@@ -2,6 +2,8 @@
 published: true
 layout: post
 title: Is your custom view interactive aware?
+redirect_to:
+  - https://medium.com/@renaudcerrato/is-your-custom-view-interactive-aware-d7e257a9547
 tags: android
 ---
 During the lifecycle of your Android [view](https://developer.android.com/reference/android/view/View.html), there are times where the user can't interact with it, and you ~~can~~ must take advantage of it to save some battery. Your custom views may need to go greener! At [Popsy](https://play.google.com/store/apps/details?id=com.mypopsy.android), we care about your battery.
