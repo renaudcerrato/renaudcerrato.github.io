@@ -21,6 +21,9 @@ gems:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+plugins:
+  - jekyll-redirect-from
+
 # Custom vars
 version:          2.1.0
 
