@@ -3,6 +3,8 @@ published: true
 title: Setup multiple SSID with hostapd
 layout: post
 tags: linux hardware
+redirect_to:
+ - https://medium.com/@renaudcerrato/how-to-setup-a-virtual-ssid-with-hostapd-804c13c9a3c2
 series: homemade-router
 ---
 Wether you're willing to setup a guest access-point, or a dedicated wireless network for your VPN needs - you'll have to setup a virtual SSID at some point. This post will walk you through the required steps to achieve it using [hostapd](https://wiki.gentoo.org/wiki/Hostapd). 
