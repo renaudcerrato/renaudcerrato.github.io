@@ -2,6 +2,8 @@
 published: true
 title: Build your homemade router (part 2)
 layout: post
+redirect_to:
+ - https://medium.com/@renaudcerrato/how-to-build-your-own-wireless-router-from-scratch-part-2-494a24e44a1b
 tags: linux hardware
 series: homemade-router
 ---
